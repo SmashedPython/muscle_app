@@ -8,16 +8,29 @@
 </head>
 <body>
 
-    <div id="London" class="tabcontent">
-        <h1>London</h1>
-        <p>London is the capital city of England.</p>
+    <div id="Text" class="tabcontent">
+        <h1>Text</h1>
+        <div class = "scrollable-content">
+            <p>London is situated in southeastern England, lying astride the River Thames some 50 miles (80 km) upstream from its estuary on the North Sea. In satellite photographs the metropolis can be seen to sit compactly in a Green Belt of open land, with its principal ring highway (the M25 motorway) threaded around it at a radius of about 20 miles (30 km) from the city center. The growth of the built-up area was halted by strict town planning controls in the mid-1950s. Its physical limits more or less correspond to the administrative and statistical boundaries separating the metropolitan county of Greater London from the “home counties” of Kent, Surrey, and Berkshire (in clockwise order) to the south of the river and Buckinghamshire, Hertfordshire, and Essex to the north. The historic counties of Kent, Hertfordshire, and Essex extend in area beyond the current administrative counties with the same names to include substantial parts of the metropolitan county of Greater London, which was formed in 1965. Most of Greater London south of the Thames belongs to the historic county of Surrey, while most of Greater London north of the Thames belongs historically to the county of Middlesex. Area Greater London, 607 square miles (1,572 square km). Pop. (2001) Greater London, 7,172,091; (2011 prelim.) Greater London, 8,173,941.</p>
+
+            <p>If the border of the metropolis is well defined, its internal structure is immensely complicated and defies description. Indeed, London’s defining characteristic is an absence of overall form. It is physically a polycentric city, with many core districts and no clear hierarchy among them. London has at least two (and sometimes many more) of everything: cities, mayors, dioceses, cathedrals, chambers of commerce, police forces, opera houses, orchestras, and universities. In every aspect it functions as a compound or confederal metropolis.</p>
+            <p>Historically, London grew from three distinct centers: the walled settlement founded by the Romans on the banks of the Thames in the 1st century ce, today known as the City of London, “the Square Mile,” or simply “the City”; facing it across the bridge on the lower gravels of the south bank, the suburb of Southwark; and a mile upstream, on a great southward bend of the river, the City of Westminster. The three settlements had distinct and complementary roles. London, “the City,” developed as a center of trade, commerce, and banking. Southwark, “the Borough,” became known for its monasteries, hospitals, inns, fairs, pleasure houses, and the great theatres of Elizabethan London—the Rose (1587), the Swan (1595), and the world-famous Globe (1599). Westminster grew up around an abbey, which brought a royal palace and, in its train, the entire central apparatus of the British state—its legislature, executive, and judiciary. It also boasts spacious parks and the most fashionable districts for living and shopping—the West End. The north-bank settlements merged into a single built-up area in the early decades of the 17th century, but they did not combine into a single enlarged municipality. The City of London was unique among Europe’s capital cities in retaining its medieval boundaries. Westminster and other suburbs were left to develop their own administrative structures—a pattern replicated a hundred times over as London exploded in size, becoming the prototype of the modern metropolis.</p>
+        </div>
+        
     </div>
-    
-    <div id="Paris" class="tabcontent">
-        <h1>Paris</h1>
-        <p>Paris is the capital of France.</p>
+
+    <div id = "LR" class="tabcontent" >
+        <h1>LR</h1>
+        <div class="lr-content">Down Here</div>
     </div>
-    
+
+
+    <div id = "Color" class="tabcontent" >
+        <h1>Color</h1>
+        <p class="color-line-1">First line is Yellow</p>
+        <p class="color-line-2">Second line is Purple</p>
+    </div>
+
     <div id="Tokyo" class="tabcontent">
         <h1>Tokyo</h1>
         <p>Tokyo is the capital of Japan.</p>
@@ -28,9 +41,9 @@
         <p>Oslo is the capital of Norway.</p>
     </div>
     
-    <button class="tablink" onclick="openCity('London', this, 'red')" id="defaultOpen">London</button>
-    <button class="tablink" onclick="openCity('Paris', this, 'green')">Paris</button>
-    <button class="tablink" onclick="openCity('Tokyo', this, 'blue')">Tokyo</button>
+    <button class="tablink" onclick="openCity('Text', this, 'red')" id="defaultOpen">Text</button>
+    <button class="tablink" onclick="openCity('LR', this, 'green')">LR</button>
+    <button class="tablink" onclick="openCity('Color', this, 'blue')">color</button>
     <button class="tablink" onclick="openCity('Oslo', this, 'orange')">Oslo</button>
 
     <script src="script.js"></script> <!-- Link to JavaScript -->

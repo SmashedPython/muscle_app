@@ -20,12 +20,68 @@
 .tabcontent {
     color: white;
     display: none;
-    padding: 50px;
+    padding: 20px;
     text-align: center;
+    height: 500px; /* Ensures a consistent height */
+    position: relative; /* Needed to allow absolute positioning inside */
 }
 
+.scrollable-content {
+    height: 100%;
+    overflow-y: auto;
+    text-align: left;
+    max-width: 600px; 
+    margin: 0 auto;
+}
+.lr-content {
+    position: absolute;
+    bottom: 20px; /* Position 20px from the bottom */
+    right: 20px; /* Position 20px from the right */
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: orange; /* Optional: to make it more visible */
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.color-line-1 {
+    color: yellow;
+    background-color: black;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.color-line-2 {
+    color: purple;
+    background-color: yellow;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px; /* Adds space between lines */
+}
+#LR {
+    background-color: green;
+    position: relative; /* Ensures .lr-content is positioned inside */
+    padding-bottom: 50px; /* Space above the tab buttons */
+    height: 500px;
+}
+
+
 /* Style each tab content individually */
-#London {background-color:red;}
-#Paris {background-color:green;}
+#Text {
+    background-color: red;
+    height: 500px; /* Ensure the tab has enough height */
+    overflow: hidden; /* Prevents the entire tab from scrolling */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#Color {
+    background-color:blue;
+}
+
+
 #Tokyo {background-color:blue;}
 #Oslo {background-color:orange;}
