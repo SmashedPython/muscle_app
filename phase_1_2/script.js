@@ -17,7 +17,14 @@ function openCity(cityName, elmnt, color) {
   
     // Add the specific color to the button used to open the tab content
     elmnt.style.backgroundColor = color;
-  }
+}
   
   // Get the element with id="defaultOpen" and click on it
-  document.getElementById("defaultOpen").click();
+document.getElementById("defaultOpen").click();
+
+function printChoices() {
+    const cameraType1 = document.querySelector('input[name="cameraType1"]:checked').value;
+    const cameraType2 = document.getElementById('cameraType2').value;
+    
+    alert(`You selected:\nCamera Type #1: ${cameraType1}\nCamera Type #2: ${cameraType2}`);
+}

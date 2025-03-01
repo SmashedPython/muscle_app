@@ -82,6 +82,59 @@
     background-color:blue;
 }
 
+#Choices {
+    background-color: #f8c8d0; 
+    color: black; 
+    text-align: left;
+    padding-bottom: 80px;
+}
 
-#Tokyo {background-color:blue;}
-#Oslo {background-color:orange;}
+#Choices h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.choices-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.choices-container h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.option-group {
+    margin-bottom: 20px;
+}
+
+.option-title {
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.radio-option {
+    margin-bottom: 8px;
+}
+
+.dropdown-option select {
+    padding: 5px;
+    font-size: 16px;
+    width: 150px;
+    margin-bottom: 30px;
+}
+
+.action-button {
+    display: block;
+    width: 200px;
+    padding: 10px;
+    background-color: #d0d0d0;
+    color: #000;
+    text-align: center;
+    border: 1px solid #333;
+    margin: 40px auto 60px auto; 
+    font-size: 16px;
+    cursor: pointer;
+}

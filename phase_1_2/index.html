@@ -31,21 +31,48 @@
         <p class="color-line-2">Second line is Purple</p>
     </div>
 
-    <div id="Tokyo" class="tabcontent">
-        <h1>Tokyo</h1>
-        <p>Tokyo is the capital of Japan.</p>
-    </div>
-    
-    <div id="Oslo" class="tabcontent">
-        <h1>Oslo</h1>
-        <p>Oslo is the capital of Norway.</p>
+    <div id="Choices" class="tabcontent">
+        <h1>Choices</h1>
+        <div class="choices-container">
+            <h2>-Choices Screen-</h2>
+            
+            <div class="option-group">
+                <p class="option-title">Camera Type #1:</p>
+                <div class="radio-option">
+                    <input type="radio" id="dslr1" name="cameraType1" value="dSLR" checked>
+                    <label for="dslr1">dSLR</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="mirrorless1" name="cameraType1" value="Mirrorless">
+                    <label for="mirrorless1">Mirrorless</label>
+                </div>
+            </div>
+            
+            <div class="option-group">
+                <p class="option-title">Camera Type #2:</p>
+                <div class="dropdown-option">
+                    <select id="cameraType2">
+                        <option value="dSLR">dSLR</option>
+                        <option value="Mirrorless">Mirrorless</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div style="height: 30px;"></div>
+            
+            <button class="action-button" onclick="printChoices()">
+                Print something<br>based on above<br>choices...
+            </button>
+            
+            <div style="height: 50px;"></div>
+        </div>
     </div>
     
     <button class="tablink" onclick="openCity('Text', this, 'red')" id="defaultOpen">Text</button>
     <button class="tablink" onclick="openCity('LR', this, 'green')">LR</button>
-    <button class="tablink" onclick="openCity('Color', this, 'blue')">color</button>
-    <button class="tablink" onclick="openCity('Oslo', this, 'orange')">Oslo</button>
-
+    <button class="tablink" onclick="openCity('Color', this, 'blue')">Color</button>
+    <button class="tablink" onclick="openCity('Choices', this, 'pink')">Choices</button>   
+    
     <script src="script.js"></script> <!-- Link to JavaScript -->
 </body>
 </html>
