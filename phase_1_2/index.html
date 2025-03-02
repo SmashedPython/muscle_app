@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Tabbed Content</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -84,13 +84,37 @@
         </div>
     </div>
     
-    <button class="tablink" onclick="openCity('Text', this, 'red')" id="defaultOpen">Text</button>
-    <button class="tablink" onclick="openCity('LR', this, 'green')">LR</button>
-    <button class="tablink" onclick="openCity('Color', this, 'blue')">Color</button>
-    <button class="tablink" onclick="openCity('Profile', this, 'purple')">Profile</button>
-
-    <button class="tablink" onclick="openCity('Choices', this, 'pink')">Choices</button>   
+    <div class="bottom-nav">
+        <button class="tablink" onclick="openCity('Text', this, 'red')" id="defaultOpen">
+            <img src="images/text.png" alt="Text">
+            <span>Text</span>
+        </button>
+        <button class="tablink" onclick="openCity('LR', this, 'green')">
+            <img src="images/br.png" alt="LR">
+            <span>LR</span>
+        </button>
+        <button class="tablink" onclick="openCity('Color', this, 'blue')">
+            <img src="images/colors.png" alt="Colors">
+            <span>Colors</span>
+        </button>
+        <button class="tablink" onclick="openCity('Profile', this, 'purple')">
+            <img src="images/profile.png" alt="Profile">
+            <span>Profile</span>
+        </button>
+        <button class="tablink" onclick="openCity('Choices', this, 'pink')">
+            <img src="images/arrows.png" alt="Choices">
+            <span>Choices</span>
+        </button>
+        <button class="tablink" onclick="openCity('ToDo', this, 'orange')">
+            <img src="images/to-do-list.png" alt="ToDo">
+            <span>To-Do</span>
+        </button>
+    </div>
     
+    
+
+
+
     <script src="script.js"></script>
 </body>
 </html>
