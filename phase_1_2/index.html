@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabbed Content</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link to CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -30,6 +30,22 @@
         <p class="color-line-1">First line is Yellow</p>
         <p class="color-line-2">Second line is Purple</p>
     </div>
+
+    <div id="Profile" class="tabcontent">
+        <h1>Profile</h1>
+        <div class="profile-container">
+            <img src="images/profile.png" alt="Profile Picture" id="profile-pic">
+            <h2 id="name"><strong>NAME NAME</strong></h2>
+        </div>
+        <div id="alert" class="alert" style="display: none;">
+            <strong>Hi!</strong> Do not click on the profile image.
+            <span class="x" onclick="closeAlert()">&times;</span>
+        </div>
+
+    </div>
+
+   
+
 
     <div id="Choices" class="tabcontent">
         <h1>Choices</h1>
@@ -71,8 +87,10 @@
     <button class="tablink" onclick="openCity('Text', this, 'red')" id="defaultOpen">Text</button>
     <button class="tablink" onclick="openCity('LR', this, 'green')">LR</button>
     <button class="tablink" onclick="openCity('Color', this, 'blue')">Color</button>
+    <button class="tablink" onclick="openCity('Profile', this, 'purple')">Profile</button>
+
     <button class="tablink" onclick="openCity('Choices', this, 'pink')">Choices</button>   
     
-    <script src="script.js"></script> <!-- Link to JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
