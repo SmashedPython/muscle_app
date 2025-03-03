@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Tabbed Content</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link to CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -31,6 +31,7 @@
         <p class="color-line-2">Second line is Purple</p>
     </div>
 
+<<<<<<< HEAD
     <div id="Tokyo" class="tabcontent">
         <h1>Tokyo</h1>
         <p>Tokyo is the capital of Japan.</p>
@@ -47,7 +48,92 @@
     <button class="tablink" onclick="openCity('LR', this, 'green')">LR</button>
     <button class="tablink" onclick="openCity('Color', this, 'blue')">color</button>
     <button class="tablink" onclick="openCity('ToDo', this, 'orange')">To Do</button>
+=======
+    <div id="Profile" class="tabcontent">
+        <h1>Profile</h1>
+        <div class="profile-container">
+            <img src="images/profile.png" alt="Profile Picture" id="profile-pic">
+            <h2 id="name"><strong>NAME NAME</strong></h2>
+        </div>
+        <div id="alert" class="alert" style="display: none;">
+            <strong>Hi!</strong> Do not click on the profile image.
+            <span class="x" onclick="closeAlert()">&times;</span>
+        </div>
+>>>>>>> 7c281073fa26eeb882881eb4ddb4b66798827106
 
-    <script src="script.js"></script> <!-- Link to JavaScript -->
+    </div>
+
+   
+
+
+    <div id="Choices" class="tabcontent">
+        <h1>Choices</h1>
+        <div class="choices-container">
+            <h2>-Choices Screen-</h2>
+            
+            <div class="option-group">
+                <p class="option-title">Camera Type #1:</p>
+                <div class="radio-option">
+                    <input type="radio" id="dslr1" name="cameraType1" value="dSLR" checked>
+                    <label for="dslr1">dSLR</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="mirrorless1" name="cameraType1" value="Mirrorless">
+                    <label for="mirrorless1">Mirrorless</label>
+                </div>
+            </div>
+            
+            <div class="option-group">
+                <p class="option-title">Camera Type #2:</p>
+                <div class="dropdown-option">
+                    <select id="cameraType2">
+                        <option value="dSLR">dSLR</option>
+                        <option value="Mirrorless">Mirrorless</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div style="height: 30px;"></div>
+            
+            <button class="action-button" onclick="printChoices()">
+                Print something<br>based on above<br>choices...
+            </button>
+            
+            <div style="height: 50px;"></div>
+        </div>
+    </div>
+    
+    <div class="bottom-nav">
+        <button class="tablink" onclick="openCity('Text', this, 'red')" id="defaultOpen">
+            <img src="images/text.png" alt="Text">
+            <span>Text</span>
+        </button>
+        <button class="tablink" onclick="openCity('LR', this, 'green')">
+            <img src="images/br.png" alt="LR">
+            <span>LR</span>
+        </button>
+        <button class="tablink" onclick="openCity('Color', this, 'blue')">
+            <img src="images/colors.png" alt="Colors">
+            <span>Colors</span>
+        </button>
+        <button class="tablink" onclick="openCity('Profile', this, 'purple')">
+            <img src="images/profile.png" alt="Profile">
+            <span>Profile</span>
+        </button>
+        <button class="tablink" onclick="openCity('Choices', this, 'pink')">
+            <img src="images/arrows.png" alt="Choices">
+            <span>Choices</span>
+        </button>
+        <button class="tablink" onclick="openCity('ToDo', this, 'orange')">
+            <img src="images/to-do-list.png" alt="ToDo">
+            <span>To-Do</span>
+        </button>
+    </div>
+    
+    
+
+
+
+    <script src="script.js"></script>
 </body>
 </html>
