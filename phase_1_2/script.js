@@ -15,12 +15,24 @@ function openCity(cityName, elmnt, color) {
     elmnt.style.backgroundColor = color;
 }
   
-<<<<<<< HEAD
-  // Get the element with id="defaultOpen" and click on it
   document.getElementById("defaultOpen").click();
 
 
 
+  document.getElementById("profile-pic").addEventListener("click", function () {
+    document.getElementById("alert").style.display = "block";
+  });
+  
+  function closeAlert() {
+    document.getElementById("alert").style.display = "none";
+  }
+  
+  function printChoices() {
+      const cameraType1 = document.querySelector('input[name="cameraType1"]:checked').value;
+      const cameraType2 = document.getElementById('cameraType2').value;
+      
+      alert(`You selected:\nCamera Type #1: ${cameraType1}\nCamera Type #2: ${cameraType2}`);
+  }
 //TODO Tab Functions
 
 function addTask() {
@@ -50,23 +62,5 @@ function addTask() {
   li.appendChild(deleteBtn);
   taskList.appendChild(li);
 
-  taskInput.value = ""; // Clear input field
-=======
-document.getElementById("defaultOpen").click();
-
-
-document.getElementById("profile-pic").addEventListener("click", function () {
-  document.getElementById("alert").style.display = "block";
-});
-
-function closeAlert() {
-  document.getElementById("alert").style.display = "none";
-}
-
-function printChoices() {
-    const cameraType1 = document.querySelector('input[name="cameraType1"]:checked').value;
-    const cameraType2 = document.getElementById('cameraType2').value;
-    
-    alert(`You selected:\nCamera Type #1: ${cameraType1}\nCamera Type #2: ${cameraType2}`);
->>>>>>> 7c281073fa26eeb882881eb4ddb4b66798827106
+  taskInput.value = ""; 
 }

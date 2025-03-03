@@ -31,7 +31,18 @@
         <p class="color-line-2">Second line is Purple</p>
     </div>
 
-<<<<<<< HEAD
+    <div id="Profile" class="tabcontent">
+        <h1>Profile</h1>
+        <div class="profile-container">
+            <img src="images/profile.png" alt="Profile Picture" id="profile-pic">
+            <h2 id="name"><strong>NAME NAME</strong></h2>
+        </div>
+        <div id="alert" class="alert" style="display: none;">
+            <strong>Hi!</strong> Do not click on the profile image.
+            <span class="x" onclick="closeAlert()">&times;</span>
+        </div>
+    </div>
+
     <div id="Tokyo" class="tabcontent">
         <h1>Tokyo</h1>
         <p>Tokyo is the capital of Japan.</p>
@@ -44,28 +55,6 @@
         <ul id="taskList"></ul>
     </div>
     
-    <button class="tablink" onclick="openCity('Text', this, 'red')" id="defaultOpen">Text</button>
-    <button class="tablink" onclick="openCity('LR', this, 'green')">LR</button>
-    <button class="tablink" onclick="openCity('Color', this, 'blue')">color</button>
-    <button class="tablink" onclick="openCity('ToDo', this, 'orange')">To Do</button>
-=======
-    <div id="Profile" class="tabcontent">
-        <h1>Profile</h1>
-        <div class="profile-container">
-            <img src="images/profile.png" alt="Profile Picture" id="profile-pic">
-            <h2 id="name"><strong>NAME NAME</strong></h2>
-        </div>
-        <div id="alert" class="alert" style="display: none;">
-            <strong>Hi!</strong> Do not click on the profile image.
-            <span class="x" onclick="closeAlert()">&times;</span>
-        </div>
->>>>>>> 7c281073fa26eeb882881eb4ddb4b66798827106
-
-    </div>
-
-   
-
-
     <div id="Choices" class="tabcontent">
         <h1>Choices</h1>
         <div class="choices-container">
@@ -129,6 +118,12 @@
             <span>To-Do</span>
         </button>
     </div>
+
+    <button class="tablink" onclick="openCity('Text', this, 'red')" id="defaultOpen">Text</button>
+    <button class="tablink" onclick="openCity('LR', this, 'green')">LR</button>
+    <button class="tablink" onclick="openCity('Color', this, 'blue')">color</button>
+    <button class="tablink" onclick="openCity('ToDo', this, 'orange')">To Do</button>
+
     
     
 

@@ -1,15 +1,15 @@
 
 .tabcontent {
     color: white;
-    display: none;
-    padding: 20px;
+    width: 100%;
+    height: calc(100vh - 80px); 
+    box-sizing: border-box;
     text-align: center;
-    height: 500px; 
-    position: relative; 
+    padding: 20px;
 }
 
 .scrollable-content {
-    height: 100%;
+    max-height: 100%;
     overflow-y: auto;
     text-align: left;
     max-width: 600px; 
@@ -55,13 +55,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    padding-bottom: 20%;
 }
 
 #Color {
     background-color:blue;
 }
-
-<<<<<<< HEAD
 #ToDo {
     background-color:orange;
 }
@@ -93,12 +93,17 @@ li {
 }
 
 #Tokyo {background-color:blue;}
-=======
+
 #Choices {
     background-color: #f8c8d0; 
     color: black; 
     text-align: left;
-    padding-bottom: 80px;
+    height: calc(100vh - 80px);
+    justify-content: center;
+    display: flex;
+    margin: 0;
+    padding: 0;
+
 }
 
 #Choices h1 {
@@ -230,13 +235,18 @@ li {
 
 .tablink.active {
     background-color: red; 
+    overflow-y: auto;
 }
-
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; 
+}
 .tabcontent {
     width: 100%;
     height: calc(100vh - 80px);
     box-sizing: border-box;
-    overflow-y: auto;
+    overflow-y: hidden;
     text-align: center;
 }
->>>>>>> 7c281073fa26eeb882881eb4ddb4b66798827106
