@@ -21,3 +21,37 @@ function openCity(cityName, elmnt, color) {
   
   // Get the element with id="defaultOpen" and click on it
   document.getElementById("defaultOpen").click();
+
+
+
+//TODO Tab Functions
+
+function addTask() {
+  let taskInput = document.getElementById("taskInput");
+  let taskText = taskInput.value.trim();
+  
+  if (taskText === "") return; // Prevent empty tasks
+
+  let taskList = document.getElementById("taskList");
+  
+  let li = document.createElement("li");
+
+  let taskSpan = document.createElement("span");
+  taskSpan.textContent = taskText;
+  taskSpan.onclick = function() {
+      this.classList.toggle("completed");
+  };
+
+  let deleteBtn = document.createElement("button");
+  deleteBtn.textContent = "Delete";
+  deleteBtn.className = "delete-btn";
+  deleteBtn.onclick = function() {
+      taskList.removeChild(li);
+  };
+
+  li.appendChild(taskSpan);
+  li.appendChild(deleteBtn);
+  taskList.appendChild(li);
+
+  taskInput.value = ""; // Clear input field
+}

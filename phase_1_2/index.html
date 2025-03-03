@@ -36,15 +36,17 @@
         <p>Tokyo is the capital of Japan.</p>
     </div>
     
-    <div id="Oslo" class="tabcontent">
-        <h1>Oslo</h1>
-        <p>Oslo is the capital of Norway.</p>
+    <div id="ToDo" class="tabcontent">
+        <h1>To Do</h1>
+        <input type="text" id="taskInput" placeholder="Enter a new task...">
+        <button onclick="addTask()">Add</button>
+        <ul id="taskList"></ul>
     </div>
     
     <button class="tablink" onclick="openCity('Text', this, 'red')" id="defaultOpen">Text</button>
     <button class="tablink" onclick="openCity('LR', this, 'green')">LR</button>
     <button class="tablink" onclick="openCity('Color', this, 'blue')">color</button>
-    <button class="tablink" onclick="openCity('Oslo', this, 'orange')">Oslo</button>
+    <button class="tablink" onclick="openCity('ToDo', this, 'orange')">To Do</button>
 
     <script src="script.js"></script> <!-- Link to JavaScript -->
 </body>
