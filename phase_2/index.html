@@ -7,7 +7,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+    <div id="MuscleMap" class="tabcontent">
+        <h1>Muscle Map</h1>
+        <div id="muscle-container" style="position: relative; display: inline-block; max-width: 400px;">
+          
+          <!-- Background muscle image -->
+          <img src="img/muscle_front.png" alt="Muscle Map" style="width: 100%; display: block;">
+    
+          <!-- SVG overlay (same size as image) -->
+          <svg id="muscle-body" viewBox="0 0 200 400" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;">
+            <g id="chest"><path d="M70 80 Q100 60 130 80 Q100 100 70 80 Z" /></g>
+            <g id="left-bicep"><path d="M60 110 Q65 100 70 110 Q65 120 60 110 Z" /></g>
+            <g id="right-bicep"><path d="M130 110 Q135 100 140 110 Q135 120 130 110 Z" /></g>
+            <g id="abs"><path d="M90 120 Q100 110 110 120 Q100 140 90 120 Z" /></g>
+          </svg>
+        </div>
+      </div>
+      
     <div id="Text" class="tabcontent">
         <h1>Text</h1>
         <div class = "scrollable-content">
@@ -93,6 +109,10 @@
     </div>
     
     <div class="bottom-nav">
+        <button class="tablink" onclick="openCity('MuscleMap', this, 'gray')">
+            <img src="images/muscle.png" alt="MuscleMap">
+            <span>Muscle</span>
+        </button>
         <button class="tablink" onclick="openCity('Text', this, 'red')" id="defaultOpen">
             <img src="images/text.png" alt="Text">
             <span>Text</span>

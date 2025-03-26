@@ -1,0 +1,252 @@
+
+.tabcontent {
+    color: white;
+    width: 100%;
+    height: calc(100vh - 80px); 
+    box-sizing: border-box;
+    text-align: center;
+    padding: 20px;
+}
+
+.scrollable-content {
+    max-height: 100%;
+    overflow-y: auto;
+    text-align: left;
+    max-width: 600px; 
+    margin: 0 auto;
+}
+.lr-content {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: orange; 
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.color-line-1 {
+    color: yellow;
+    background-color: black;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.color-line-2 {
+    color: purple;
+    background-color: yellow;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+#LR {
+    background-color: green;
+    position: relative; 
+    padding-bottom: 50px; 
+}
+
+
+#Text {
+    background-color: red;
+    overflow: hidden; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 20%;
+}
+
+#Color {
+    background-color:blue;
+}
+#ToDo {
+    background-color:orange;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.delete-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+#Tokyo {background-color:blue;}
+
+#Choices {
+    background-color: #f8c8d0; 
+    color: black; 
+    text-align: left;
+    height: calc(100vh - 80px);
+    justify-content: center;
+    display: flex;
+    margin: 0;
+    padding: 0;
+
+}
+
+#Choices h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.choices-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.choices-container h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.option-group {
+    margin-bottom: 20px;
+}
+
+.option-title {
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.radio-option {
+    margin-bottom: 8px;
+}
+
+.dropdown-option select {
+    padding: 5px;
+    font-size: 16px;
+    width: 150px;
+    margin-bottom: 30px;
+}
+
+.action-button {
+    display: block;
+    width: 200px;
+    padding: 10px;
+    background-color: #d0d0d0;
+    color: #000;
+    text-align: center;
+    border: 1px solid #333;
+    margin: 40px auto 60px auto; 
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+#Profile {
+    background-color: purple; 
+    color: black; 
+}
+
+#profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid black;
+    display: block;
+    margin: 0 auto; 
+}
+
+#name {
+    color: #000;
+}
+
+.alert {
+    padding: 15px;
+    background-color: red;
+    color: white;
+    margin: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    border-radius: 5px;
+    position: relative;
+    display: none; 
+}
+
+.x {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 20px;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+
+
+
+
+.bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%; 
+    background-color: navy;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+
+.tablink {
+    flex-grow: 1;
+    border: none;
+    background: none;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-size: 12px;
+}
+.tablink img {
+    width: 30px;
+    height: 30px;
+    filter: invert(100%);
+}
+
+.tablink.active {
+    background-color: red; 
+    overflow-y: auto;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; 
+}
+.tabcontent {
+    width: 100%;
+    height: calc(100vh - 80px);
+    box-sizing: border-box;
+    overflow-y: hidden;
+    text-align: center;
+}
