@@ -64,21 +64,3 @@ function addTask() {
 
   taskInput.value = ""; 
 }
-
-const muscleUsage = {
-  chest: 0.8,
-  "left-bicep": 0.6,
-  "right-bicep": 0.6,
-  abs: 0.3
-};
-
-function usageToColor(value) {
-  const r = Math.round(255 * value);
-  const g = Math.round(255 * (1 - value));
-  return `rgb(${r}, ${g}, 0)`;
-}
-
-for (const muscle in muscleUsage) {
-  const el = document.getElementById(muscle);
-  if (el) el.setAttribute("fill", usageToColor(muscleUsage[muscle]));
-}
