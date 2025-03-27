@@ -19,13 +19,102 @@
         </div>
       </div>
       
-    <div id="Text" class="tabcontent">
-        <h1>Text</h1>
+    <div id="Food" class="tabcontent">
+        <h1>Log Your Eats!</h1>
         <div class = "scrollable-content">
-            <p>London is situated in southeastern England, lying astride the River Thames some 50 miles (80 km) upstream from its estuary on the North Sea. In satellite photographs the metropolis can be seen to sit compactly in a Green Belt of open land, with its principal ring highway (the M25 motorway) threaded around it at a radius of about 20 miles (30 km) from the city center. The growth of the built-up area was halted by strict town planning controls in the mid-1950s. Its physical limits more or less correspond to the administrative and statistical boundaries separating the metropolitan county of Greater London from the “home counties” of Kent, Surrey, and Berkshire (in clockwise order) to the south of the river and Buckinghamshire, Hertfordshire, and Essex to the north. The historic counties of Kent, Hertfordshire, and Essex extend in area beyond the current administrative counties with the same names to include substantial parts of the metropolitan county of Greater London, which was formed in 1965. Most of Greater London south of the Thames belongs to the historic county of Surrey, while most of Greater London north of the Thames belongs historically to the county of Middlesex. Area Greater London, 607 square miles (1,572 square km). Pop. (2001) Greater London, 7,172,091; (2011 prelim.) Greater London, 8,173,941.</p>
+            <label for="meal-select">Select meal:</label>
+            <select id="meal-select">
+                <option value="">Select</option>
+                <option value="breakfast">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+            </select>
 
-            <p>If the border of the metropolis is well defined, its internal structure is immensely complicated and defies description. Indeed, London’s defining characteristic is an absence of overall form. It is physically a polycentric city, with many core districts and no clear hierarchy among them. London has at least two (and sometimes many more) of everything: cities, mayors, dioceses, cathedrals, chambers of commerce, police forces, opera houses, orchestras, and universities. In every aspect it functions as a compound or confederal metropolis.</p>
-            <p>Historically, London grew from three distinct centers: the walled settlement founded by the Romans on the banks of the Thames in the 1st century ce, today known as the City of London, “the Square Mile,” or simply “the City”; facing it across the bridge on the lower gravels of the south bank, the suburb of Southwark; and a mile upstream, on a great southward bend of the river, the City of Westminster. The three settlements had distinct and complementary roles. London, “the City,” developed as a center of trade, commerce, and banking. Southwark, “the Borough,” became known for its monasteries, hospitals, inns, fairs, pleasure houses, and the great theatres of Elizabethan London—the Rose (1587), the Swan (1595), and the world-famous Globe (1599). Westminster grew up around an abbey, which brought a royal palace and, in its train, the entire central apparatus of the British state—its legislature, executive, and judiciary. It also boasts spacious parks and the most fashionable districts for living and shopping—the West End. The north-bank settlements merged into a single built-up area in the early decades of the 17th century, but they did not combine into a single enlarged municipality. The City of London was unique among Europe’s capital cities in retaining its medieval boundaries. Westminster and other suburbs were left to develop their own administrative structures—a pattern replicated a hundred times over as London exploded in size, becoming the prototype of the modern metropolis.</p>
+            <h2>Dairy</h2>
+            <div class="icon-row">
+                <div class="icon">🥛<span>Milk</span></div>
+                <div class="icon">🧀<span>Cheese</span></div>
+                <div class="icon">🍶<span>Yogurt</span></div>
+                <div class="icon">🧈<span>Butter</span></div>
+                <div class="icon">🥚<span>Eggs</span></div>
+            </div>
+
+            <h2>Vegetables</h2>
+            <div class="icon-row">
+                <div class="icon">🥦<span>Broccoli</span></div>
+                <div class="icon">🥕<span>Carrot</span></div>
+                <div class="icon">🌽<span>Corn</span></div>
+                <div class="icon">🥬<span>Lettuce</span></div>
+                <div class="icon">🧄<span>Garlic</span></div>
+                <div class="icon">🧅<span>Onion</span></div>
+                <div class="icon">🥒<span>Cucumber</span></div>
+                <div class="icon">🫛<span>Peas</span></div>
+            </div>
+
+            <h2>Fruits</h2>
+            <div class="icon-row">
+                <div class="icon">🍎<span>Apple</span></div>
+                <div class="icon">🍌<span>Banana</span></div>
+                <div class="icon">🍇<span>Grapes</span></div>
+                <div class="icon">🍓<span>Strawberry</span></div>
+                <div class="icon">🍍<span>Pineapple</span></div>
+                <div class="icon">🍉<span>Watermelon</span></div>
+                <div class="icon">🍑<span>Peach</span></div>
+            </div>
+
+            <h2>Meats & Proteins</h2>
+            <div class="icon-row">
+                <div class="icon">🍗<span>Chicken</span></div>
+                <div class="icon">🥩<span>Beef</span></div>
+                <div class="icon">🥓<span>Bacon</span></div>
+                <div class="icon">🐟<span>Fish</span></div>
+                <div class="icon">🫘<span>Beans</span></div>
+                <div class="icon">🌰<span>Nuts</span></div>
+                <div class="icon">🍳<span>Tofu</span></div>
+            </div>
+
+            <h2>Grains & Carbs</h2>
+            <div class="icon-row">
+                <div class="icon">🍞<span>Bread</span></div>
+                <div class="icon">🍚<span>Rice</span></div>
+                <div class="icon">🍝<span>Pasta</span></div>
+                <div class="icon">🥯<span>Bagel</span></div>
+                <div class="icon">🥖<span>Baguette</span></div>
+                <div class="icon">🧇<span>Waffles</span></div>
+            </div>
+
+            <h2>Fats & Oils</h2>
+            <div class="icon-row">
+                <div class="icon">🧈<span>Butter</span></div>
+                <div class="icon">🥑<span>Avocado</span></div>
+                <div class="icon">🫒<span>Olive Oil</span></div>
+                <div class="icon">🥜<span>Peanut Butter</span></div>
+            </div>
+
+            <h2>Snacks & Sweets</h2>
+            <div class="icon-row">
+                <div class="icon">🍪<span>Cookies</span></div>
+                <div class="icon">🍫<span>Chocolate</span></div>
+                <div class="icon">🍿<span>Popcorn</span></div>
+                <div class="icon">🧁<span>Cupcake</span></div>
+                <div class="icon">🍩<span>Donut</span></div>
+            </div>
+
+            <h2>Drinks</h2>
+            <div class="icon-row">
+                <div class="icon">🧃<span>Juice</span></div>
+                <div class="icon">🥤<span>Soda</span></div>
+                <div class="icon">☕<span>Coffee</span></div>
+                <div class="icon">🫖<span>Tea</span></div>
+                <div class="icon">💧<span>Water</span></div>
+            </div>
+
+            
+            <div class="btn-row">
+                <button onclick="clearLog()">Clear</button>
+                <button onclick="submitLog()">Enter</button>
+            </div>
+
         </div>
         
     </div>
@@ -108,9 +197,9 @@
             <img src="images/muscle.png" alt="MuscleMap">
             <span>Muscle</span>
         </button>
-        <button class="tablink" onclick="openCity('Text', this, 'red')" id="defaultOpen">
-            <img src="images/text.png" alt="Text">
-            <span>Text</span>
+        <button class="tablink" onclick="openCity('Food', this, 'red')" id="defaultOpen">
+            <img src="images/foodicon.png" alt="Food">
+            <span>Food</span>
         </button>
         <button class="tablink" onclick="openCity('LR', this, 'green')">
             <img src="images/br.png" alt="LR">

@@ -49,14 +49,15 @@
 }
 
 
-#Text {
-    background-color: red;
+#Food {
+    background-color: rgb(196, 252, 255);
     overflow: hidden; 
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     padding-bottom: 20%;
+    color: black;
 }
 
 #Color {
