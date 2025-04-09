@@ -1,4 +1,31 @@
 
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #000000;
+    font-family: 'Roboto', sans-serif;
+  }
+  .tabcontent {
+    background-color: #d4e8ff !important;
+  }
+  
+  .profile-page,
+  #Profile,
+  #Workout,
+  #MuscleMap,
+  #Text,
+  #ToDo,
+  #Choices,
+  #Color,
+  #LR,
+  #Tokyo {
+    background-color: #d4e8ff !important;
+  }
+  
+  
+  
+
 .tabcontent {
     color: white;
     width: 100%;
@@ -48,6 +75,32 @@
     position: relative; 
     padding-bottom: 50px; 
 }
+
+button {
+    padding: 12px 20px;
+    font-size: 1em;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    border-radius: 10px;
+    background-color: #4A90E2;  
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+  }
+  
+  button:hover {
+    background-color: #05347e; 
+  }
+  
+  button:active {
+    transform: scale(0.98);
+  }
+  
+  button:disabled {
+    background-color: #b0bdc1;
+    cursor: not-allowed;
+  }
+  
 
 
 #Food {
@@ -166,18 +219,80 @@ li {
     padding: 20px; 
 }
 
-#profile-pic {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 80px; 
-    height: auto; 
-    border-radius: 50%;
+.profile-page {
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+    font-family: sans-serif;
+  }
+  
+  .profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20
+    px;
+    margin-bottom: 20px;
+  }
+  
+  #profile-pic {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%; 
+    border: 3px solid rgb(0, 0, 0);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     cursor: pointer;
-    border: 3px solid black;
-    display: block;
-    margin: 0 auto; 
-}
+  }
+  
+  
+  .logout {
+    margin-bottom: 20px;
+  }
+  
+  .personal-info, .fitness-goal, .streak-calendar {
+    margin-bottom: 20px;
+  }
+  
+  .calendar-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .week-calendar {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+  }
+  
+  .day-box {
+    flex: 1;
+    height: 60px;
+    border-radius: 8px;
+    text-align: center;
+    padding: 5px;
+    font-size: 0.9em;
+    background-color: #eee;
+    transition: background-color 0.2s ease;
+  }
+  
+  .day-box.active {
+    background-color: #a4f4b6;
+  }
+  
+  .day-box.future {
+    background-color: #f0f8ff;
+    border: 2px dashed #aaa;
+  }
+  
+  .day-box.today {
+    border: 2px solid #333;
+  }
+  
+  
+
 
 #Profile .profile-stats {
     display: flex;
@@ -191,7 +306,7 @@ li {
     position: relative; 
 }
 .profile-stats {
-    margin-top: 80px; /* Leaves space for your top-right image */
+    margin-top: 80px; 
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -217,50 +332,175 @@ li {
     border-top-right-radius: 5px;
 }
 
-/* 
-   If you want the tab labels to appear on the same row 
-   without extra spacing, you could also do this:
-   #Profile .tab-label + .tab-label { margin-left: 0; }
-*/
 
-/* By default, hide the tab-content */
 #Profile .tab-content {
     display: none;
     border: 1px solid #ccc;
     padding: 16px;
-    margin-top: -1px; /* so the label's bottom border lines up */
+    margin-top: -1px; 
 }
 
-/* Show "Your Streak" content when #profileTabYourStreak is checked */
 #profileTabYourStreak:checked ~ #profileYourStreakContent {
     display: block;
 }
 
-/* Show "Friends’ Streaks" content when #profileTabFriendsStreak is checked */
 #profileTabFriendsStreak:checked ~ #profileFriendsStreakContent {
     display: block;
 }
 
-/* Example styling for the Congratulate button */
-#Profile .congrats-button {
-    margin-left: 10px;
-    padding: 6px 12px;
-    border: 1px solid #aaa;
-    background-color: #f0f0f0;
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    backdrop-filter: blur(4px);
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    width: 90%;
+    max-width: 360px; 
+    margin: 30vh auto; 
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+  
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #555;
     cursor: pointer;
-}
+  }
 
+#logoutModal button {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    font-size: 1em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  #logoutModal button:first-of-type {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  #logoutModal button:last-of-type {
+    background-color: #ff4d4d;
+    color: white;
+  }
+  
+  
+  body {
+    font-family: system-ui, sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+  }
+
+  #personalInfoEdit {
+    background-color: #b3e0ff; 
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  
+  #personalInfoEdit h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .form-row {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-row label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .form-row input {
+    padding: 8px;
+    font-size: 1em;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  .form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .form-buttons button {
+    flex: 1;
+    margin: 0 5px;
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 8px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .form-buttons button:hover {
+    background-color: #0056b3;
+  }
+  
+  
+  @media (max-width: 400px) {
+    body {
+      font-size: 15px;
+    }
+  }
+  
 .emoji {
     font-size: 3em;
     display: block;
   }
   
 
-#Profile .congrats-button:hover {
-    background-color: #ddd;
-}
+  #confirmLogoutModal button,
+  #confirmDeleteModal button {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    font-size: 1em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  #confirmLogoutModal button:first-of-type,
+  #confirmDeleteModal button:first-of-type {
+    background-color: #ff4d4d;
+    color: white;
+  }
+  
+  #confirmLogoutModal button:last-of-type,
+  #confirmDeleteModal button:last-of-type {
+    background-color: #ccc;
+    color: #333;
+  }
+  
 
-/* Example list styling */
 #Profile #profileFriendsStreakContent ul {
     list-style-type: none;
     padding: 0;
@@ -273,6 +513,52 @@ li {
     align-items: center;
     margin-bottom: 10px;
 }
+
+.goal-edit {
+    background-color: #eef7ff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+  
+  .goal-option {
+    margin-bottom: 15px;
+  }
+  
+  .goal-option label {
+    display: block;
+    margin-left: 8px;
+    font-size: 0.95em;
+    cursor: pointer;
+  }
+  
+  .goal-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .goal-buttons button {
+    flex: 1;
+    margin: 0 5px;
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 8px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+
+
+  
+  
+  .goal-buttons button:last-of-type {
+    background-color: #ccc;
+    color: #333;
+  }
+  
 
 .stat h2 {
     margin: 0;
@@ -316,7 +602,7 @@ li {
     background-color: navy;
     box-sizing: border-box;
     border-top: 1px solid #333;
-    position: relative; /* important: remove 'fixed' so it stays inside app-container */
+    position: relative;
     width: 100%;
 }
 
@@ -350,8 +636,8 @@ html, body {
     overflow: hidden; 
 }
 #app-container {
-    width: 390px; /* iPhone 14 width */
-    height: 844px; /* iPhone 14 height */
+    width: 390px; /* app constraints hopefully*/
+    height: 844px;
     margin: 0 auto;
     border: 1px solid #ccc;
     border-radius: 20px;

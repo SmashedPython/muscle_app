@@ -12,7 +12,6 @@
         <h1>Muscle Map</h1>
         <div id="muscle-container" style="position: relative; display: inline-block; max-width: 400px;">
           
-          <!-- Background muscle image -->
           <img src="img/muscle_front.png" alt="Muscle Map" style="width: 100%; display: block;">
 
           </svg>
@@ -119,75 +118,158 @@
         
     </div>
 
-    <div id = "LR" class="tabcontent" >
-        <h1>LR</h1>
-        <div class="lr-content">Down Here</div>
-    </div>
 
-
-    <div id = "Color" class="tabcontent" >
-        <h1>Color</h1>
-        <p class="color-line-1">First line is Yellow</p>
-        <p class="color-line-2">Second line is Purple</p>
-    </div>
-    
 
     <div id="Profile" class="tabcontent">
-        <h1>Profile</h1>
+        <div class="profile-page">
+      
+          <div id="profilePictureSection" class="profile-header">
+            <img src="images/profile.png" id="profile-pic" alt="Profile Photo">
+            <div id="logoutBtn" class="logout" style="display: none;">
+              <button onclick="logout()">Logout</button>
+            </div>
+          </div>
+          
+      
+          <div id="personalInfoSection" class="personal-info">
+            <h2>Personal Information</h2>
+      
+            <div id="personalInfoDisplay">
+              <p><strong>Age:</strong> <span id="displayAge">21</span></p>
+              <p><strong>Height:</strong> <span id="displayHeight">5'6"</span></p>
+              <p><strong>Weight:</strong> <span id="displayWeight">130 lbs</span></p>
+              <button onclick="toggleEditForm(true)">Edit Profile Data</button>
+            </div>
+      
+            <div id="personalInfoEdit" style="display: none;">
+                <h2>Edit</h2>
+              
+                <div class="form-row">
+                  <label for="ageInput">Age:</label>
+                  <input type="number" id="ageInput" placeholder="Age">
+                </div>
+              
+                <div class="form-row">
+                  <label for="heightInput">Height:</label>
+                  <input type="text" id="heightInput" placeholder="e.g. 5'6&quot;">
+                </div>
+              
+                <div class="form-row">
+                  <label for="weightInput">Weight:</label>
+                  <input type="text" id="weightInput" placeholder="e.g. 130 lbs">
+                </div>
+              
+                <div class="form-buttons">
+                  <button onclick="savePersonalInfo()">Save</button>
+                  <button onclick="toggleEditForm(false)">Cancel</button>
+                </div>
+              </div>
+              
+        </div>
+      
+            <div id="fitnessGoalSection" class="fitness-goal">
+                <h2>Fitness Goal</h2>
+                <p><strong>Current Goal:</strong> <span id="currentGoal">Lose Weight</span></p>
+                <button onclick="showGoalEditor()">Update Goal</button>
+            </div>
+            <div id="goalEditPage" style="display: none;" class="goal-edit">
+                <h2>Choose Your Goal</h2>
+            
+                <div class="goal-option">
+                <input type="radio" name="goal" id="goal1" value="Grow Muscle" checked>
+                <label for="goal1"><strong>Lose Weight</strong> - Reduce body fat with a calorie deficit & cardio.</label>
+                </div>
+            
+                <div class="goal-option">
+                <input type="radio" name="goal" id="goal2" value="Build Muscle">
+                <label for="goal2"><strong>Build Muscle</strong> - Build strength and increase muscle mass through resistance training.</label>
+                </div>
+            
+                <div class="goal-option">
+                <input type="radio" name="goal" id="goal3" value="Maintain">
+                <label for="goal3"><strong>Maintain</strong> - Keep current weight & energy with balanced habits.</label>
+                </div>
+                <div class="goal-option">
+                    <input type="radio" name="goal" id="goal4" value="Reduce Pain">
+                    <label for="goal4"><strong>Reduce Pain</strong> – Focus on injury prevention and rehabilitation with stretching & mobility</label>
+                  </div>
+            
+                <div class="goal-buttons">
+                <button onclick="saveGoal()">Save Goal</button>
+                <button onclick="cancelGoalEdit()">Cancel</button>
+                </div>
+            </div>
+  
+        <div id="calendarSection">
+            <button onclick="showStreakPage()">See Past Data</button>
+        </div>
         
-        <!-- Profile Info (unchanged) -->
-        <div class="profile-container">
-            <img src="images/profile.png" alt="Profile Picture" id="profile-pic">
-            <h2 id="name"><strong>Neha Veera</strong></h2>
-        </div>
-    
-        <!-- Followers & Following Section (example) -->
-        <div class="profile-stats">
-            <div class="stat">
-                <h2 id="followerCount">300</h2>
-                <p>Followers</p>
+        <div id="streakPage" style="display: none;" class="streak-calendar">
+            <h2>Weekly Streak</h2>
+            <div class="calendar-nav">
+            <button onclick="prevWeek()">⬅️</button>
+            <span id="weekLabel"></span>
+            <button onclick="nextWeek()">➡️</button>
             </div>
-            <div class="stat">
-                <h2 id="followingCount">150</h2>
-                <p>Following</p>
+            <div id="weekCalendar" class="week-calendar"></div>
+            <div style="margin-top: 20px;">
+            <button onclick="hideStreakPage()">Back</button>
             </div>
         </div>
+        </div>
     
-        <!-- Streaks Section with Tabs (unique to #Profile) -->
-        <div class="profile-streaks">
-            <!-- 1) Radio inputs for toggling tabs -->
-            <input type="radio" name="profileStreakTabs" id="profileTabYourStreak" checked>
-            <label for="profileTabYourStreak" class="tab-label">Your Streak</label>
-    
-            <input type="radio" name="profileStreakTabs" id="profileTabFriendsStreak">
-            <label for="profileTabFriendsStreak" class="tab-label">Friends’ Streaks</label>
-    
-            <!-- 2) Your Streak Tab Content -->
-            <div class="tab-content" id="profileYourStreakContent">
-                <h3>Your Streak</h3>
-                <p>15 days</p>
-            </div>
-    
-            <!-- 3) Friends’ Streaks Tab Content -->
-            <div class="tab-content" id="profileFriendsStreakContent">
-                <h3>Friends’ Streaks</h3>
-                <ul>
-                    <li>
-                        <span>Friend 1: 10 days</span>
-                        <button class="congrats-button">Congratulate</button>
-                    </li>
-                    <li>
-                        <span>Friend 2: 25 days</span>
-                        <button class="congrats-button">Congratulate</button>
-                    </li>
-                    <li>
-                        <span>Friend 3: 5 days</span>
-                        <button class="congrats-button">Congratulate</button>
-                    </li>
-                </ul>
+        <div id="dayModal" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3 id="modalDate"></h3>
+            <div id="modalContent"></div>
+          </div>
+        </div>
+        <div id="logoutModal" class="modal">
+            <div class="modal-content">
+            <span class="close" onclick="closeLogoutModal()">&times;</span>
+            <h3>Account Options</h3>
+            <button onclick="changeProfile()">Change Profile Picture</button>
+            <button onclick="logout()">Logout</button>
+            <button onclick="deleteAccount()">Delete Account</button>
             </div>
         </div>
-    </div>
+        <div id="confirmLogoutModal" class="modal">
+            <div class="modal-content">
+            <h3>Are you sure you want to log out?</h3>
+            <button onclick="confirmLogout()">Yes, Log Out</button>
+            <button onclick="closeConfirmLogout()">Cancel</button>
+            </div>
+        </div>
+        
+        <div id="confirmDeleteModal" class="modal">
+            <div class="modal-content">
+            <h3>Delete your account?</h3>
+            <p>This cannot be undone.</p>
+            <button onclick="confirmDelete()">Yes, Delete</button>
+            <button onclick="closeConfirmDelete()">Cancel</button>
+            </div>
+        </div>
+        <div id="notImplementedModal" class="modal">
+            <div class="modal-content">
+            <span class="close" onclick="closeNotImplemented()">&times;</span>
+            <h3>Feature Not Yet Implemented</h3>
+            </div>
+        </div>
+        <div id="workoutFeatureModal" class="modal">
+            <div class="modal-content">
+            <span class="close" onclick="closeWorkoutFeatureModal()">&times;</span>
+            <h3>Feature Not Yet Implemented</h3>
+            <p>Adding a planned workout is coming soon! 🏋️‍♀️</p>
+            </div>
+        </div>
+  
+  
+  
+  
+      </div>
+
+      
 
       
     <div id="Workout" class="tabcontent">
@@ -213,7 +295,7 @@
             <span class="emoji">🍎</span><br>
         </button>
         
-          <button class="tablink" onclick="openCity('Workout', this, 'blue')">
+          <button id="workoutTabBtn" class="tablink" onclick="openCity('Workout', this, 'blue')">
             <span class="emoji">🏋️</span><br>
         </button>
 
