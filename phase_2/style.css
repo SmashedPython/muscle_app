@@ -103,6 +103,97 @@ button {
   
 
 
+
+#Workout {
+  background-color: rgb(159, 209, 238); 
+  color: black;
+  position: relative; 
+  padding: 20px; 
+}
+
+.muscle-group {
+  margin-top:1.5rem;
+}
+
+.workout-grid {
+  display:flex;
+  gap:1.25rem;
+  overflow-x:auto;
+  padding-bottom:1rem;
+  scrollbar-width: thin;
+}
+
+.workouts {
+  background-color: #929292;
+  border-radius: 12px;
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  position: relative;
+  min-width: 80px;
+  max-height: 60px;
+  text-align: center;
+}
+
+.workouts.selected {
+  border: 3px solid white;
+}
+
+.section-cards {
+  /* Container for all workout cards in a section */
+  position: relative;
+}
+
+.workout-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 12px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  position: relative;
+  display: none;
+  max-width: 100%;
+}
+
+.workout-card.visible {
+  display: block;
+}
+
+.workout-card h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #000;
+}
+
+.workout-card p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 3px;
+}
+
+.log-button {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  background-color: #5a7e87;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 4px 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Make sure only one card is visible per section */
+.section-cards .workout-card.visible {
+  display: block;
+}
+
+
 #Food {
     background-color: rgb(	212, 232, 255);
     overflow-y: auto; 
@@ -164,7 +255,8 @@ button {
     overflow-x:auto;
     margin-bottom:1rem;
     border-bottom:1px solid var(--grey);
-}    
+}  
+
 .meal-tab {
     flex:0 0 auto;
     padding:8px 18px;
@@ -784,6 +876,7 @@ html, body {
     background-color: white;
     position: relative;
 }
+
 #muscle-container {
   height: calc(100vh - 100px); /* still good */
   display: flex;
