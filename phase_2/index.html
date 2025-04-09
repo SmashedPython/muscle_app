@@ -20,100 +20,114 @@
       
     <div id="Food" class="tabcontent">
         <h1>Log Your Eats!</h1>
-        <div class = "scrollable-content">
-            <label for="meal-select">Select meal:</label>
-            <select id="meal-select">
-                <option value="">Select</option>
-                <option value="breakfast">Breakfast</option>
-                <option value="lunch">Lunch</option>
-                <option value="dinner">Dinner</option>
-            </select>
+        <!-- meal‑type selector -->
+        <div class="meal-tabs">
+        <button class="meal-tab active" data-meal="breakfast">Breakfast</button>
+        <button class="meal-tab" data-meal="brunch">Brunch</button>
+        <button class="meal-tab" data-meal="lunch">Lunch</button>
+        <button class="meal-tab" data-meal="dinner">Dinner</button>
+        <button class="meal-tab" data-meal="snack">Snack</button>
+      </div>
+  
+      <!--  Sections (three only to avoid vertical scrolling)  -->
+      <section class="food-section">
+        <p class="section-title">Dairy</p>
+        <div class="item-row">
+          <div class="food-item" data-food="Milk"><span class="circle">🥛</span>Milk</div>
+          <div class="food-item" data-food="Cheese"><span class="circle">🧀</span>Cheese</div>
+          <div class="food-item" data-food="Yogurt"><span class="circle">🍶</span>Yogurt</div>
+          <div class="food-item" data-food="Butter"><span class="circle">🧈</span>Butter</div>
+          <div class="food-item" data-food="Eggs"><span class="circle">🥚</span>Eggs</div>
+        </div>
+      </section>
+  
+      <section class="food-section">
+        <p class="section-title">Vegetables</p>
+        <div class="item-row">
+          <div class="food-item" data-food="Broccoli"><span class="circle">🥦</span>Broccoli</div>
+          <div class="food-item" data-food="Carrot"><span class="circle">🥕</span>Carrot</div>
+          <div class="food-item" data-food="Corn"><span class="circle">🌽</span>Corn</div>
+          <div class="food-item" data-food="Lettuce"><span class="circle">🥬</span>Lettuce</div>
+          <div class="food-item" data-food="Garlic"><span class="circle">🧄</span>Garlic</div>
+          <div class="food-item" data-food="Onion"><span class="circle">🧅</span>Onion</div>
+          <div class="food-item" data-food="Cucumber"><span class="circle">🥒</span>Cucumber</div>
+          <div class="food-item" data-food="Peas"><span class="circle">🫛</span>Peas</div>
+        </div>
+      </section>
+  
+      <section class="food-section">
+        <p class="section-title">Fruits</p>
+        <div class="item-row">
+          <div class="food-item" data-food="Apple"><span class="circle">🍎</span>Apple</div>
+          <div class="food-item" data-food="Banana"><span class="circle">🍌</span>Banana</div>
+          <div class="food-item" data-food="Grapes"><span class="circle">🍇</span>Grapes</div>
+          <div class="food-item" data-food="Strawberry"><span class="circle">🍓</span>Strawberry</div>
+          <div class="food-item" data-food="Pineapple"><span class="circle">🍍</span>Pineapple</div>
+          <div class="food-item" data-food="Watermelon"><span class="circle">🍉</span>Watermelon</div>
+          <div class="food-item" data-food="Peach"><span class="circle">🍑</span>Peach</div>
+        </div>
+      </section>
 
-            <h2>Dairy</h2>
-            <div class="icon-row">
-                <div class="icon">🥛<span>Milk</span></div>
-                <div class="icon">🧀<span>Cheese</span></div>
-                <div class="icon">🍶<span>Yogurt</span></div>
-                <div class="icon">🧈<span>Butter</span></div>
-                <div class="icon">🥚<span>Eggs</span></div>
-            </div>
-
-            <h2>Vegetables</h2>
-            <div class="icon-row">
-                <div class="icon">🥦<span>Broccoli</span></div>
-                <div class="icon">🥕<span>Carrot</span></div>
-                <div class="icon">🌽<span>Corn</span></div>
-                <div class="icon">🥬<span>Lettuce</span></div>
-                <div class="icon">🧄<span>Garlic</span></div>
-                <div class="icon">🧅<span>Onion</span></div>
-                <div class="icon">🥒<span>Cucumber</span></div>
-                <div class="icon">🫛<span>Peas</span></div>
-            </div>
-
-            <h2>Fruits</h2>
-            <div class="icon-row">
-                <div class="icon">🍎<span>Apple</span></div>
-                <div class="icon">🍌<span>Banana</span></div>
-                <div class="icon">🍇<span>Grapes</span></div>
-                <div class="icon">🍓<span>Strawberry</span></div>
-                <div class="icon">🍍<span>Pineapple</span></div>
-                <div class="icon">🍉<span>Watermelon</span></div>
-                <div class="icon">🍑<span>Peach</span></div>
-            </div>
-
-            <h2>Meats & Proteins</h2>
-            <div class="icon-row">
-                <div class="icon">🍗<span>Chicken</span></div>
-                <div class="icon">🥩<span>Beef</span></div>
-                <div class="icon">🥓<span>Bacon</span></div>
-                <div class="icon">🐟<span>Fish</span></div>
-                <div class="icon">🫘<span>Beans</span></div>
-                <div class="icon">🌰<span>Nuts</span></div>
-                <div class="icon">🍳<span>Tofu</span></div>
-            </div>
-
-            <h2>Grains & Carbs</h2>
-            <div class="icon-row">
-                <div class="icon">🍞<span>Bread</span></div>
-                <div class="icon">🍚<span>Rice</span></div>
-                <div class="icon">🍝<span>Pasta</span></div>
-                <div class="icon">🥯<span>Bagel</span></div>
-                <div class="icon">🥖<span>Baguette</span></div>
-                <div class="icon">🧇<span>Waffles</span></div>
-            </div>
-
-            <h2>Fats & Oils</h2>
-            <div class="icon-row">
-                <div class="icon">🧈<span>Butter</span></div>
-                <div class="icon">🥑<span>Avocado</span></div>
-                <div class="icon">🫒<span>Olive Oil</span></div>
-                <div class="icon">🥜<span>Peanut Butter</span></div>
-            </div>
-
-            <h2>Snacks & Sweets</h2>
-            <div class="icon-row">
-                <div class="icon">🍪<span>Cookies</span></div>
-                <div class="icon">🍫<span>Chocolate</span></div>
-                <div class="icon">🍿<span>Popcorn</span></div>
-                <div class="icon">🧁<span>Cupcake</span></div>
-                <div class="icon">🍩<span>Donut</span></div>
-            </div>
-
-            <h2>Drinks</h2>
-            <div class="icon-row">
-                <div class="icon">🧃<span>Juice</span></div>
-                <div class="icon">🥤<span>Soda</span></div>
-                <div class="icon">☕<span>Coffee</span></div>
-                <div class="icon">🫖<span>Tea</span></div>
-                <div class="icon">💧<span>Water</span></div>
-            </div>
-
-            
-            <div class="btn-row">
-                <button onclick="clearLog()">Clear</button>
-                <button onclick="submitLog()">Enter</button>
-            </div>
-
+      <section class="food-section">
+        <p class="section-title">Meats & Proteins</p>
+        <div class="item-row">
+          <div class="food-item" data-food="Chicken"><span class="circle">🍗</span>Chicken</div>
+          <div class="food-item" data-food="Beef"><span class="circle">🥩</span>Beef</div>
+          <div class="food-item" data-food="Bacon"><span class="circle">🥓</span>Bacon</div>
+          <div class="food-item" data-food="Fish"><span class="circle">🐟</span>Fish</div>
+          <div class="food-item" data-food="Beans"><span class="circle">🫘</span>Beans</div>
+          <div class="food-item" data-food="Nuts"><span class="circle">🌰</span>Nuts</div>
+          <div class="food-item" data-food="Tofu"><span class="circle">🍳</span>Tofu</div>
+        </div>
+      </section>
+  
+      <section class="food-section">
+        <p class="section-title">Grains & Carbs</p>
+        <div class="item-row">
+          <div class="food-item" data-food="Bread"><span class="circle">🍞</span>Bread</div>
+          <div class="food-item" data-food="Rice"><span class="circle">🍚</span>Rice</div>
+          <div class="food-item" data-food="Pasta"><span class="circle">🍝</span>Pasta</div>
+          <div class="food-item" data-food="Bagel"><span class="circle">🥯</span>Bagel</div>
+          <div class="food-item" data-food="Baguette"><span class="circle">🥖</span>Baguette</div>
+          <div class="food-item" data-food="Waffles"><span class="circle">🧇</span>Waffles</div>
+        </div>
+      </section>
+  
+      <section class="food-section">
+        <p class="section-title">Fats & Oils</p>
+        <div class="item-row">
+          <div class="food-item" data-food="ButterFat"><span class="circle">🧈</span>Butter</div>
+          <div class="food-item" data-food="Avocado"><span class="circle">🥑</span>Avocado</div>
+          <div class="food-item" data-food="Olive Oil"><span class="circle">🫒</span>Olive Oil</div>
+          <div class="food-item" data-food="Peanut Butter"><span class="circle">🥜</span>Peanut Butter</div>
+        </div>
+      </section>
+  
+      <section class="food-section">
+        <p class="section-title">Snacks & Sweets</p>
+        <div class="item-row">
+          <div class="food-item" data-food="Cookies"><span class="circle">🍪</span>Cookies</div>
+          <div class="food-item" data-food="Chocolate"><span class="circle">🍫</span>Chocolate</div>
+          <div class="food-item" data-food="Popcorn"><span class="circle">🍿</span>Popcorn</div>
+          <div class="food-item" data-food="Cupcake"><span class="circle">🧁</span>Cupcake</div>
+          <div class="food-item" data-food="Donut"><span class="circle">🍩</span>Donut</div>
+        </div>
+      </section>
+  
+      <section class="food-section">
+        <p class="section-title">Drinks</p>
+        <div class="item-row">
+          <div class="food-item" data-food="Juice"><span class="circle">🧃</span>Juice</div>
+          <div class="food-item" data-food="Soda"><span class="circle">🥤</span>Soda</div>
+          <div class="food-item" data-food="Coffee"><span class="circle">☕</span>Coffee</div>
+          <div class="food-item" data-food="Tea"><span class="circle">🫖</span>Tea</div>
+          <div class="food-item" data-food="Water"><span class="circle">💧</span>Water</div>
+        </div>
+      </section>
+  
+        <div class="btn-row">
+          <button class="btn-clear" id="btn-clear">Clear</button>
+          <button class="btn-enter" id="btn-enter">Enter</button>
         </div>
         
     </div>

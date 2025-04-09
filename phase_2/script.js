@@ -22,7 +22,41 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("defaultOpen").click();
 });
 
+let currentMeal = 'Breakfast';
+document.querySelectorAll('.meal-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    currentMeal = tab.dataset.meal;
+    document.querySelectorAll('.meal-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+  });
+});
 
+const chosen = new Set();
+document.querySelectorAll('.food-item').forEach(item => {
+  item.addEventListener('click', () => {
+    const key = item.dataset.food;
+    if (chosen.has(key)) {                // deselect
+      chosen.delete(key);
+      item.classList.remove('selected');
+    } else {                              // select
+      chosen.add(key);
+      item.classList.add('selected');
+    }
+  });
+});
+
+document.getElementById('btn-clear').addEventListener('click', () => {
+  chosen.clear();
+  document.querySelectorAll('.food-item').forEach(i => i.classList.remove('selected'));
+});
+
+document.getElementById('btn-enter').addEventListener('click', () => {
+  if (!chosen.size) {
+    alert('Select at least one food item.');
+    return;
+  }
+  alert(`Logged to ${currentMeal}: ${[...chosen].join(', ')}`);
+});
 
   document.getElementById("profile-pic").addEventListener("click", function () {
     document.getElementById("alert").style.display = "block";
