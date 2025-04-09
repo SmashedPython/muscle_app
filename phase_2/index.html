@@ -8,15 +8,106 @@
 </head>
 <body>
     <div id="app-container">
-    <div id="MuscleMap" class="tabcontent">
-        <h1>Muscle Map</h1>
-        <div id="muscle-container" style="position: relative; display: inline-block; max-width: 400px;">
-          
-          <img src="img/muscle_front.png" alt="Muscle Map" style="width: 100%; display: block;">
-
-          </svg>
+      <div id="MuscleMap" class="tabcontent">
+        <div id="muscle-container">
+      
+          <!-- FRONT VIEW -->
+          <div class="muscle-half">
+            
+            <svg viewBox="0 0 200 250" xmlns="http://www.w3.org/2000/svg">
+              <text x="80" y="15" font-size="16" font-weight="bold">Front</text>
+              <circle cx="100" cy="40" r="15" fill="#fcd5b4" stroke="black" />
+              <!-- Sunglasses -->
+              <!-- Left lens -->
+              <rect x="89" y="34" width="8" height="6" rx="2" ry="2" fill="black" />
+              <!-- Right lens -->
+              <rect x="103" y="34" width="8" height="6" rx="2" ry="2" fill="black" />
+              <!-- Bridge -->
+              <line x1="97" y1="37" x2="103" y2="37" stroke="black" stroke-width="1.5" />
+              <!-- Side arms -->
+              <line x1="89" y1="36" x2="85" y2="35" stroke="black" stroke-width="1" />
+              <line x1="111" y1="36" x2="115" y2="35" stroke="black" stroke-width="1" />
+              <!-- Pecs -->
+              <g id="pecs" class="muscle">
+                <rect x="75" y="60" width="50" height="25" stroke="black" />
+                <text x="92" y="77" font-size="8">Pecs</text>
+              </g>
+      
+              <!-- Abs -->
+              <g id="abs" class="muscle">
+                <rect x="85" y="85" width="30" height="50" stroke="black" />
+                <text x="92" y="115" font-size="8">Abs</text>
+              </g>
+      
+              <!-- Biceps -->
+              <g id="biceps-left" class="muscle">
+                <rect x="50" y="60" width="25" height="60" stroke="black" />
+                <text x="52" y="90" font-size="8">Biceps</text>
+              </g>
+              <g id="biceps-right" class="muscle">
+                <rect x="125" y="60" width="25" height="60" stroke="black" />
+                <text x="127" y="90" font-size="8">Biceps</text>
+              </g>
+      
+              <!-- Quads -->
+              <g id="quads-left" class="muscle">
+                <rect x="75" y="135" width="20" height="70" stroke="black" />
+                <text x="75" y="195" font-size="8">Quad</text>
+              </g>
+              <g id="quads-right" class="muscle">
+                <rect x="105" y="135" width="20" height="70" stroke="black" />
+              </g>
+            </svg>
+          </div>
+      
+          <!-- BACK VIEW -->
+          <div class="muscle-half">
+            <svg viewBox="0 0 200 250" xmlns="http://www.w3.org/2000/svg">
+              <text x="80" y="15" font-size="16" font-weight="bold">Back</text>
+              <circle cx="100" cy="40" r="15" fill="#fcd5b4" stroke="black" />
+      
+              <!-- Traps -->
+              <g id="traps" class="muscle">
+                <rect x="80" y="60" width="40" height="15" stroke="black" />
+                <text x="92" y="72" font-size="8">Traps</text>
+              </g>
+      
+              <!-- Lats -->
+              <g id="lats" class="muscle">
+                <rect x="75" y="75" width="50" height="25" stroke="black" />
+                <text x="92" y="90" font-size="8">Lats</text>
+              </g>
+      
+              <!-- Triceps -->
+              <g id="triceps-left" class="muscle">
+                <rect x="50" y="60" width="25" height="60" stroke="black" />
+                <text x="50" y="90" font-size="8">Triceps</text>
+              </g>
+              <g id="triceps-right" class="muscle">
+                <rect x="125" y="60" width="25" height="60" stroke="black" />
+                <text x="125" y="90" font-size="8">Triceps</text>
+              </g>
+      
+              <!-- Glute -->
+              <g id="glute" class="muscle">
+                <rect x="85" y="105" width="30" height="20" stroke="black" />
+                <text x="92" y="120" font-size="8">Glute</text>
+              </g>
+      
+              <!-- Hamstrings -->
+              <g id="hams-left" class="muscle">
+                <rect x="75" y="125" width="20" height="70"  stroke="black" />
+                <text x="75" y="185" font-size="8">Hams</text>
+              </g>
+              <g id="hams-right" class="muscle">
+                <rect x="105" y="125" width="20" height="70" stroke="black" />
+              </g>
+            </svg>
+          </div>
         </div>
       </div>
+      
+
       
     <div id="Food" class="tabcontent">
         <h1>Log Your Eats!</h1>

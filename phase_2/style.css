@@ -784,3 +784,34 @@ html, body {
     background-color: white;
     position: relative;
 }
+#muscle-container {
+  height: calc(100vh - 100px); /* still good */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* <--- changed from space-evenly */
+  align-items: center;
+  padding: 0;
+}
+
+.muscle-half {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+.muscle-half:first-child {
+  margin-top: 50px; /* <--- push front view down a bit */
+}
+
+.muscle-half svg {
+  height: 120%;
+  width: auto;
+  display: block;
+}
+.muscle:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
