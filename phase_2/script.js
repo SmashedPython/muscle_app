@@ -20,6 +20,7 @@ function openCity(cityName, elmnt, color) {
   
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("defaultOpen").click();
+
 });
 
 let currentMeal = 'Breakfast';
@@ -392,7 +393,7 @@ function confirmDelete() {
 // end of profile code
 
 // Initialize by hiding all exercise cards
-document.querySelectorAll('.exercise-card').forEach(card => {
+document.querySelectorAll('.workout-card').forEach(card => {
   card.style.display = 'none';
 });
 
@@ -418,11 +419,18 @@ document.querySelectorAll('.workouts').forEach(icon => {
 });
 
 // Log button functionality
-document.querySelectorAll('.log-button').forEach(button => {
-  button.addEventListener('click', function() {
-      const exerciseName = this.closest('.workout-card').querySelector('h3').textContent;
-      alert(`${exerciseName} logged successfully!`);
-  });
+document.getElementById('log-button').addEventListener('click', () => {
+    const exerciseName = this.closest('.workout-card').querySelector('h3').textContent;
+    alert(`ALAL logged successfully!`);
 });
 
 
+
+
+document.getElementById('btn-enter').addEventListener('click', () => {
+  if (!chosen.size) {
+    alert('Select at least one food item.');
+    return;
+  }
+  alert(`Logged to ${currentMeal}: ${[...chosen].join(', ')}`);
+});
