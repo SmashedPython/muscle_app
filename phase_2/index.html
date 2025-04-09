@@ -19,6 +19,117 @@
         </div>
       </div>
       
+    <div id="Food" class="tabcontent">
+        <h1>Log Your Eats!</h1>
+        <div class = "scrollable-content">
+            <label for="meal-select">Select meal:</label>
+            <select id="meal-select">
+                <option value="">Select</option>
+                <option value="breakfast">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+            </select>
+
+            <h2>Dairy</h2>
+            <div class="icon-row">
+                <div class="icon">🥛<span>Milk</span></div>
+                <div class="icon">🧀<span>Cheese</span></div>
+                <div class="icon">🍶<span>Yogurt</span></div>
+                <div class="icon">🧈<span>Butter</span></div>
+                <div class="icon">🥚<span>Eggs</span></div>
+            </div>
+
+            <h2>Vegetables</h2>
+            <div class="icon-row">
+                <div class="icon">🥦<span>Broccoli</span></div>
+                <div class="icon">🥕<span>Carrot</span></div>
+                <div class="icon">🌽<span>Corn</span></div>
+                <div class="icon">🥬<span>Lettuce</span></div>
+                <div class="icon">🧄<span>Garlic</span></div>
+                <div class="icon">🧅<span>Onion</span></div>
+                <div class="icon">🥒<span>Cucumber</span></div>
+                <div class="icon">🫛<span>Peas</span></div>
+            </div>
+
+            <h2>Fruits</h2>
+            <div class="icon-row">
+                <div class="icon">🍎<span>Apple</span></div>
+                <div class="icon">🍌<span>Banana</span></div>
+                <div class="icon">🍇<span>Grapes</span></div>
+                <div class="icon">🍓<span>Strawberry</span></div>
+                <div class="icon">🍍<span>Pineapple</span></div>
+                <div class="icon">🍉<span>Watermelon</span></div>
+                <div class="icon">🍑<span>Peach</span></div>
+            </div>
+
+            <h2>Meats & Proteins</h2>
+            <div class="icon-row">
+                <div class="icon">🍗<span>Chicken</span></div>
+                <div class="icon">🥩<span>Beef</span></div>
+                <div class="icon">🥓<span>Bacon</span></div>
+                <div class="icon">🐟<span>Fish</span></div>
+                <div class="icon">🫘<span>Beans</span></div>
+                <div class="icon">🌰<span>Nuts</span></div>
+                <div class="icon">🍳<span>Tofu</span></div>
+            </div>
+
+            <h2>Grains & Carbs</h2>
+            <div class="icon-row">
+                <div class="icon">🍞<span>Bread</span></div>
+                <div class="icon">🍚<span>Rice</span></div>
+                <div class="icon">🍝<span>Pasta</span></div>
+                <div class="icon">🥯<span>Bagel</span></div>
+                <div class="icon">🥖<span>Baguette</span></div>
+                <div class="icon">🧇<span>Waffles</span></div>
+            </div>
+
+            <h2>Fats & Oils</h2>
+            <div class="icon-row">
+                <div class="icon">🧈<span>Butter</span></div>
+                <div class="icon">🥑<span>Avocado</span></div>
+                <div class="icon">🫒<span>Olive Oil</span></div>
+                <div class="icon">🥜<span>Peanut Butter</span></div>
+            </div>
+
+            <h2>Snacks & Sweets</h2>
+            <div class="icon-row">
+                <div class="icon">🍪<span>Cookies</span></div>
+                <div class="icon">🍫<span>Chocolate</span></div>
+                <div class="icon">🍿<span>Popcorn</span></div>
+                <div class="icon">🧁<span>Cupcake</span></div>
+                <div class="icon">🍩<span>Donut</span></div>
+            </div>
+
+            <h2>Drinks</h2>
+            <div class="icon-row">
+                <div class="icon">🧃<span>Juice</span></div>
+                <div class="icon">🥤<span>Soda</span></div>
+                <div class="icon">☕<span>Coffee</span></div>
+                <div class="icon">🫖<span>Tea</span></div>
+                <div class="icon">💧<span>Water</span></div>
+            </div>
+
+            
+            <div class="btn-row">
+                <button onclick="clearLog()">Clear</button>
+                <button onclick="submitLog()">Enter</button>
+            </div>
+
+        </div>
+        
+    </div>
+
+    <div id = "LR" class="tabcontent" >
+        <h1>LR</h1>
+        <div class="lr-content">Down Here</div>
+    </div>
+
+
+    <div id = "Color" class="tabcontent" >
+        <h1>Color</h1>
+        <p class="color-line-1">First line is Yellow</p>
+        <p class="color-line-2">Second line is Purple</p>
+    </div>
     
 
     <div id="Profile" class="tabcontent">
@@ -78,10 +189,6 @@
         </div>
     </div>
 
-    <div id="Food" class="tabcontent">
-        <h1>Food Log</h1>
-        <p>This is where you'll add your meals or see daily nutrition.</p>
-    </div>
       
     <div id="Workout" class="tabcontent">
         <h1>Workout Log</h1>
@@ -96,10 +203,8 @@
     <div class="bottom-nav">
         <button class="tablink" onclick="openCity('MuscleMap', this, 'gray')" id="defaultOpen">
             <span class="emoji">💪</span><br>
-
           </button>
           
-
         <button class="tablink" onclick="openCity('Profile', this, 'purple')">
             <span class="emoji">👤</span><br>
         </button>
