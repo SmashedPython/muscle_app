@@ -20,7 +20,6 @@ function openCity(cityName, elmnt, color) {
   
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("defaultOpen").click();
-
 });
 
 let currentMeal = 'Breakfast';
@@ -391,47 +390,6 @@ function confirmDelete() {
 }
 
 // end of profile code
-
-// Initialize by hiding all exercise cards
-document.querySelectorAll('.workout-card').forEach(card => {
-  card.style.display = 'none';
-});
-
-// Exercise selection functionality
-document.querySelectorAll('.workouts').forEach(icon => {
-  icon.addEventListener('click', function() {
-      // First, deselect all icons and hide all cards
-      document.querySelectorAll('.workouts').forEach(i => {
-          i.classList.remove('selected');
-      });
-      document.querySelectorAll('.workout-card').forEach(card => {
-          card.style.display = 'none';
-      });
-      
-      // Then select this icon and show its card
-      this.classList.add('selected');
-      const exercise = this.getAttribute('data-workout');
-      const card = document.getElementById(`${exercise}-card`);
-      if (card) {
-          card.style.display = 'block';
-      }
-  });
-});
-
-// Log button functionality
-document.getElementById('log-button').addEventListener('click', () => {
-    const exerciseName = this.closest('.workout-card').querySelector('h3').textContent;
-    alert(`ALAL logged successfully!`);
-});
-
-
-document.getElementById('btn-enter').addEventListener('click', () => {
-  if (!chosen.size) {
-    alert('Select at least one food item.');
-    return;
-  }
-  alert(`Logged to ${currentMeal}: ${[...chosen].join(', ')}`);
-  
 // Muscle interaction: track training severity visually (green to red)
 const MAX_SEVERITY = 5;
 const muscleTrainingStatus = {
@@ -469,6 +427,7 @@ document.addEventListener("DOMContentLoaded", () => {
       muscleTrainingStatus[id] = Math.min(muscleTrainingStatus[id] + 1, MAX_SEVERITY);
       const level = muscleTrainingStatus[id];
       const color = severityColors[level];
+
       if (rect) rect.setAttribute("fill", color);
     });
   });
