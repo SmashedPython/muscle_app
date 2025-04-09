@@ -425,12 +425,51 @@ document.getElementById('log-button').addEventListener('click', () => {
 });
 
 
-
-
 document.getElementById('btn-enter').addEventListener('click', () => {
   if (!chosen.size) {
     alert('Select at least one food item.');
     return;
   }
   alert(`Logged to ${currentMeal}: ${[...chosen].join(', ')}`);
+  
+// Muscle interaction: track training severity visually (green to red)
+const MAX_SEVERITY = 5;
+const muscleTrainingStatus = {
+  pecs: 1,
+  abs: 1,
+  "biceps-left": 1,
+  "biceps-right": 1,
+  "quads-left": 1,
+  "quads-right": 1,
+  traps: 1,
+  lats: 1,
+  "triceps-left": 1,
+  "triceps-right": 1,
+  glute: 1,
+  "hams-left": 1,
+  "hams-right": 1
+};
+
+// Color scale (severity level 0 → 5)
+const severityColors = ["#4caf50", "#aee571", "#fff176", "#ffb74d", "#ff7043", "#f44336"];
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".muscle").forEach(el => {
+    const id = el.id;
+    muscleTrainingStatus[id] = 0; // Start with level 0 (green)
+
+    const rect = el.querySelector("rect");
+    if (rect) {
+      rect.setAttribute("fill", severityColors[0]); // Initial color
+    }
+
+    el.addEventListener("click", () => {
+      // Increase severity up to max
+      muscleTrainingStatus[id] = Math.min(muscleTrainingStatus[id] + 1, MAX_SEVERITY);
+      const level = muscleTrainingStatus[id];
+      const color = severityColors[level];
+      if (rect) rect.setAttribute("fill", color);
+    });
+  });
 });
