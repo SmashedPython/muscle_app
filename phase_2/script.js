@@ -391,6 +391,38 @@ function confirmDelete() {
 
 // end of profile code
 
+// Initialize by hiding all exercise cards
+document.querySelectorAll('.exercise-card').forEach(card => {
+  card.style.display = 'none';
+});
 
+// Exercise selection functionality
+document.querySelectorAll('.workouts').forEach(icon => {
+  icon.addEventListener('click', function() {
+      // First, deselect all icons and hide all cards
+      document.querySelectorAll('.workouts').forEach(i => {
+          i.classList.remove('selected');
+      });
+      document.querySelectorAll('.workout-card').forEach(card => {
+          card.style.display = 'none';
+      });
+      
+      // Then select this icon and show its card
+      this.classList.add('selected');
+      const exercise = this.getAttribute('data-workout');
+      const card = document.getElementById(`${exercise}-card`);
+      if (card) {
+          card.style.display = 'block';
+      }
+  });
+});
+
+// Log button functionality
+document.querySelectorAll('.log-button').forEach(button => {
+  button.addEventListener('click', function() {
+      const exerciseName = this.closest('.workout-card').querySelector('h3').textContent;
+      alert(`${exerciseName} logged successfully!`);
+  });
+});
 
 
