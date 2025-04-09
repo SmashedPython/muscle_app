@@ -19,125 +19,104 @@
         </div>
       </div>
       
-    <div id="Text" class="tabcontent">
-        <h1>Text</h1>
-        <div class = "scrollable-content">
-            <p>London is situated in southeastern England, lying astride the River Thames some 50 miles (80 km) upstream from its estuary on the North Sea. In satellite photographs the metropolis can be seen to sit compactly in a Green Belt of open land, with its principal ring highway (the M25 motorway) threaded around it at a radius of about 20 miles (30 km) from the city center. The growth of the built-up area was halted by strict town planning controls in the mid-1950s. Its physical limits more or less correspond to the administrative and statistical boundaries separating the metropolitan county of Greater London from the “home counties” of Kent, Surrey, and Berkshire (in clockwise order) to the south of the river and Buckinghamshire, Hertfordshire, and Essex to the north. The historic counties of Kent, Hertfordshire, and Essex extend in area beyond the current administrative counties with the same names to include substantial parts of the metropolitan county of Greater London, which was formed in 1965. Most of Greater London south of the Thames belongs to the historic county of Surrey, while most of Greater London north of the Thames belongs historically to the county of Middlesex. Area Greater London, 607 square miles (1,572 square km). Pop. (2001) Greater London, 7,172,091; (2011 prelim.) Greater London, 8,173,941.</p>
-
-            <p>If the border of the metropolis is well defined, its internal structure is immensely complicated and defies description. Indeed, London’s defining characteristic is an absence of overall form. It is physically a polycentric city, with many core districts and no clear hierarchy among them. London has at least two (and sometimes many more) of everything: cities, mayors, dioceses, cathedrals, chambers of commerce, police forces, opera houses, orchestras, and universities. In every aspect it functions as a compound or confederal metropolis.</p>
-            <p>Historically, London grew from three distinct centers: the walled settlement founded by the Romans on the banks of the Thames in the 1st century ce, today known as the City of London, “the Square Mile,” or simply “the City”; facing it across the bridge on the lower gravels of the south bank, the suburb of Southwark; and a mile upstream, on a great southward bend of the river, the City of Westminster. The three settlements had distinct and complementary roles. London, “the City,” developed as a center of trade, commerce, and banking. Southwark, “the Borough,” became known for its monasteries, hospitals, inns, fairs, pleasure houses, and the great theatres of Elizabethan London—the Rose (1587), the Swan (1595), and the world-famous Globe (1599). Westminster grew up around an abbey, which brought a royal palace and, in its train, the entire central apparatus of the British state—its legislature, executive, and judiciary. It also boasts spacious parks and the most fashionable districts for living and shopping—the West End. The north-bank settlements merged into a single built-up area in the early decades of the 17th century, but they did not combine into a single enlarged municipality. The City of London was unique among Europe’s capital cities in retaining its medieval boundaries. Westminster and other suburbs were left to develop their own administrative structures—a pattern replicated a hundred times over as London exploded in size, becoming the prototype of the modern metropolis.</p>
-        </div>
-        
-    </div>
-
-    <div id = "LR" class="tabcontent" >
-        <h1>LR</h1>
-        <div class="lr-content">Down Here</div>
-    </div>
-
-
-    <div id = "Color" class="tabcontent" >
-        <h1>Color</h1>
-        <p class="color-line-1">First line is Yellow</p>
-        <p class="color-line-2">Second line is Purple</p>
-    </div>
+    
 
     <div id="Profile" class="tabcontent">
         <h1>Profile</h1>
+        
+        <!-- Profile Info (unchanged) -->
         <div class="profile-container">
             <img src="images/profile.png" alt="Profile Picture" id="profile-pic">
-            <h2 id="name"><strong>NAME NAME</strong></h2>
+            <h2 id="name"><strong>Neha Veera</strong></h2>
         </div>
-        <div id="alert" class="alert" style="display: none;">
-            <strong>Hi!</strong> Do not click on the profile image.
-            <span class="x" onclick="closeAlert()">&times;</span>
+    
+        <!-- Followers & Following Section (example) -->
+        <div class="profile-stats">
+            <div class="stat">
+                <h2 id="followerCount">300</h2>
+                <p>Followers</p>
+            </div>
+            <div class="stat">
+                <h2 id="followingCount">150</h2>
+                <p>Following</p>
+            </div>
+        </div>
+    
+        <!-- Streaks Section with Tabs (unique to #Profile) -->
+        <div class="profile-streaks">
+            <!-- 1) Radio inputs for toggling tabs -->
+            <input type="radio" name="profileStreakTabs" id="profileTabYourStreak" checked>
+            <label for="profileTabYourStreak" class="tab-label">Your Streak</label>
+    
+            <input type="radio" name="profileStreakTabs" id="profileTabFriendsStreak">
+            <label for="profileTabFriendsStreak" class="tab-label">Friends’ Streaks</label>
+    
+            <!-- 2) Your Streak Tab Content -->
+            <div class="tab-content" id="profileYourStreakContent">
+                <h3>Your Streak</h3>
+                <p>15 days</p>
+            </div>
+    
+            <!-- 3) Friends’ Streaks Tab Content -->
+            <div class="tab-content" id="profileFriendsStreakContent">
+                <h3>Friends’ Streaks</h3>
+                <ul>
+                    <li>
+                        <span>Friend 1: 10 days</span>
+                        <button class="congrats-button">Congratulate</button>
+                    </li>
+                    <li>
+                        <span>Friend 2: 25 days</span>
+                        <button class="congrats-button">Congratulate</button>
+                    </li>
+                    <li>
+                        <span>Friend 3: 5 days</span>
+                        <button class="congrats-button">Congratulate</button>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 
-    <div id="Tokyo" class="tabcontent">
-        <h1>Tokyo</h1>
-        <p>Tokyo is the capital of Japan.</p>
+    <div id="Food" class="tabcontent">
+        <h1>Food Log</h1>
+        <p>This is where you'll add your meals or see daily nutrition.</p>
+    </div>
+      
+    <div id="Workout" class="tabcontent">
+        <h1>Workout Log</h1>
+        <p>This is where your workouts or plans go.</p>
     </div>
     
-    <div id="ToDo" class="tabcontent">
-        <h1>To Do</h1>
-        <input type="text" id="taskInput" placeholder="Enter a new task...">
-        <button onclick="addTask()">Add</button>
-        <ul id="taskList"></ul>
-    </div>
     
-    <div id="Choices" class="tabcontent">
-        <h1>Choices</h1>
-        <div class="choices-container">
-            <h2>-Choices Screen-</h2>
-            
-            <div class="option-group">
-                <p class="option-title">Camera Type #1:</p>
-                <div class="radio-option">
-                    <input type="radio" id="dslr1" name="cameraType1" value="dSLR" checked>
-                    <label for="dslr1">dSLR</label>
-                </div>
-                <div class="radio-option">
-                    <input type="radio" id="mirrorless1" name="cameraType1" value="Mirrorless">
-                    <label for="mirrorless1">Mirrorless</label>
-                </div>
-            </div>
-            
-            <div class="option-group">
-                <p class="option-title">Camera Type #2:</p>
-                <div class="dropdown-option">
-                    <select id="cameraType2">
-                        <option value="dSLR">dSLR</option>
-                        <option value="Mirrorless">Mirrorless</option>
-                    </select>
-                </div>
-            </div>
-            
-            <div style="height: 30px;"></div>
-            
-            <button class="action-button" onclick="printChoices()">
-                Print something<br>based on above<br>choices...
-            </button>
-            
-            <div style="height: 50px;"></div>
-        </div>
-    </div>
+    
+
+    
     
     <div class="bottom-nav">
-        <button class="tablink" onclick="openCity('MuscleMap', this, 'gray')">
-            <img src="images/muscle.png" alt="MuscleMap">
-            <span>Muscle</span>
-        </button>
-        <button class="tablink" onclick="openCity('Text', this, 'red')" id="defaultOpen">
-            <img src="images/text.png" alt="Text">
-            <span>Text</span>
-        </button>
-        <button class="tablink" onclick="openCity('LR', this, 'green')">
-            <img src="images/br.png" alt="LR">
-            <span>LR</span>
-        </button>
-        <button class="tablink" onclick="openCity('Color', this, 'blue')">
-            <img src="images/colors.png" alt="Colors">
-            <span>Colors</span>
-        </button>
+        <button class="tablink" onclick="openCity('MuscleMap', this, 'gray')" id="defaultOpen">
+            <span class="emoji">💪</span><br>
+
+          </button>
+          
+
         <button class="tablink" onclick="openCity('Profile', this, 'purple')">
-            <img src="images/profile.png" alt="Profile">
-            <span>Profile</span>
+            <span class="emoji">👤</span><br>
         </button>
-        <button class="tablink" onclick="openCity('Choices', this, 'pink')">
-            <img src="images/arrows.png" alt="Choices">
-            <span>Choices</span>
+
+        <button class="tablink" onclick="openCity('Food', this, 'green')">
+            <span class="emoji">🍎</span><br>
         </button>
-        <button class="tablink" onclick="openCity('ToDo', this, 'orange')">
-            <img src="images/to-do-list.png" alt="ToDo">
-            <span>To-Do</span>
+        
+          <button class="tablink" onclick="openCity('Workout', this, 'blue')">
+            <span class="emoji">🏋️</span><br>
         </button>
+
+
     </div>
 
     <button class="tablink" onclick="openCity('Muscle Map', this, 'red')" id="defaultOpen">Text</button>
-    <button class="tablink" onclick="openCity('LR', this, 'green')">LR</button>
-    <button class="tablink" onclick="openCity('Color', this, 'blue')">color</button>
-    <button class="tablink" onclick="openCity('ToDo', this, 'orange')">To Do</button>
+
 
     
     

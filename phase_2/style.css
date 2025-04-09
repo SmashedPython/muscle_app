@@ -6,6 +6,7 @@
     box-sizing: border-box;
     text-align: center;
     padding: 20px;
+    position: relative;
 }
 
 .scrollable-content {
@@ -158,18 +159,123 @@ li {
 
 
 #Profile {
-    background-color: purple; 
-    color: black; 
+    background-color: rgb(159, 209, 238); 
+    color: black;
+    position: relative; 
+    padding: 20px; 
 }
 
 #profile-pic {
-    width: 150px;
-    height: 150px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80px; 
+    height: auto; 
     border-radius: 50%;
     cursor: pointer;
     border: 3px solid black;
     display: block;
     margin: 0 auto; 
+}
+
+#Profile .profile-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+#Profile .stat {
+    text-align: center;
+}
+.profile-container {
+    position: relative; 
+}
+.profile-stats {
+    margin-top: 80px; /* Leaves space for your top-right image */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.stat {
+    text-align: center;
+}
+
+#Profile .profile-streaks input[type="radio"] {
+    display: none;
+}
+#Profile .tab-label {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 8px 16px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    background-color: #f0f0f0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+/* 
+   If you want the tab labels to appear on the same row 
+   without extra spacing, you could also do this:
+   #Profile .tab-label + .tab-label { margin-left: 0; }
+*/
+
+/* By default, hide the tab-content */
+#Profile .tab-content {
+    display: none;
+    border: 1px solid #ccc;
+    padding: 16px;
+    margin-top: -1px; /* so the label's bottom border lines up */
+}
+
+/* Show "Your Streak" content when #profileTabYourStreak is checked */
+#profileTabYourStreak:checked ~ #profileYourStreakContent {
+    display: block;
+}
+
+/* Show "Friends’ Streaks" content when #profileTabFriendsStreak is checked */
+#profileTabFriendsStreak:checked ~ #profileFriendsStreakContent {
+    display: block;
+}
+
+/* Example styling for the Congratulate button */
+#Profile .congrats-button {
+    margin-left: 10px;
+    padding: 6px 12px;
+    border: 1px solid #aaa;
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+.emoji {
+    font-size: 3em;
+    display: block;
+  }
+  
+
+#Profile .congrats-button:hover {
+    background-color: #ddd;
+}
+
+/* Example list styling */
+#Profile #profileFriendsStreakContent ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#Profile #profileFriendsStreakContent li {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.stat h2 {
+    margin: 0;
+    font-size: 2rem;
 }
 
 #name {

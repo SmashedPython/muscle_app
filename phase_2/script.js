@@ -15,7 +15,9 @@ function openCity(cityName, elmnt, color) {
     elmnt.style.backgroundColor = color;
 }
   
+document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("defaultOpen").click();
+});
 
 
 
@@ -27,12 +29,7 @@ function openCity(cityName, elmnt, color) {
     document.getElementById("alert").style.display = "none";
   }
   
-  function printChoices() {
-      const cameraType1 = document.querySelector('input[name="cameraType1"]:checked').value;
-      const cameraType2 = document.getElementById('cameraType2').value;
-      
-      alert(`You selected:\nCamera Type #1: ${cameraType1}\nCamera Type #2: ${cameraType2}`);
-  }
+
 //TODO Tab Functions
 
 function addTask() {
