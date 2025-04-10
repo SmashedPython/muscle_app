@@ -432,3 +432,70 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+
+
+// Exercise selection functionality
+document.querySelectorAll('.workouts').forEach(icon => {
+  icon.addEventListener('click', function() {
+      // First, deselect all icons and hide all cards
+      document.querySelectorAll('.workouts').forEach(i => {
+          i.classList.remove('selected');
+      });
+      document.querySelectorAll('.workout-card').forEach(card => {
+          card.style.display = 'none';
+      });
+     
+      // Then select this icon and show its card
+      this.classList.add('selected');
+      const exercise = this.getAttribute('data-workout');
+      const card = document.getElementById(`${exercise}-card`);
+      if (card) {
+          card.style.display = 'block';
+      }
+  });
+});
+
+
+// Initialize by hiding all workout cards
+document.addEventListener('DOMContentLoaded', function() {
+  // Hide all workout cards initially
+  document.querySelectorAll('.workout-card').forEach(card => {
+    card.style.display = 'none';
+  });
+
+
+  // Exercise selection functionality
+  document.querySelectorAll('.workouts').forEach(icon => {
+    icon.addEventListener('click', function() {
+      const section = this.getAttribute('data-section');
+      const exercise = this.getAttribute('data-workout');
+     
+      // First, deselect all workouts in this section
+      document.querySelectorAll(`.workouts[data-section="${section}"]`).forEach(i => {
+        i.classList.remove('selected');
+      });
+     
+      // Hide all workout cards in this section
+      document.querySelectorAll(`#${section}-cards .workout-card`).forEach(card => {
+        card.style.display = 'none';
+      });
+     
+      // Then select this workout and show its card
+      this.classList.add('selected');
+      const card = document.getElementById(`${exercise}-card`);
+      if (card) {
+        card.style.display = 'block';
+      }
+    });
+  });
+});
+
+
+// Log button functionality - Placed outside DOMContentLoaded to ensure it runs even if DOM is already loaded
+document.querySelectorAll('.log-button').forEach(button => {
+  button.addEventListener('click', function() {
+    const exerciseName = this.closest('.workout-card').querySelector('h3').textContent;
+    alert(`${exerciseName} logged successfully!`);
+  });
+});
