@@ -55,16 +55,10 @@
 
 ---
 
-## 📸 Screenshots (optional)
+## 📸 Screenshots
 
 Add images to an `images/` folder and link them like this:
 
 ```markdown
-### Muscle Map
-![Muscle Map](images/muscle_map.png)
-
-### Profile Page
-![Profile](images/profile_screen.png)
-
-### Workout Calendar
-![Workout History](images/calendar_view.png)
+### Implementation
+![Muscle APP](images\comparison.jpg)
