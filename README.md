@@ -61,4 +61,8 @@ Add images to an `images/` folder and link them like this:
 
 ```markdown
 ### Implementation
+![Low-Fidelity Prototype](images/low_fidelity.jpg)
+### Our Implementation
+![Implementation](images/implement.jpg)
+### Comparision
 ![Muscle APP](images/comparison.jpg)
