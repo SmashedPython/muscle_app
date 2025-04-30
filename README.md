@@ -61,7 +61,7 @@
 
 ---
 
-## 😈Disclaim
+## 😈 Disclaim
 
 This repository contains my original implementations of computer vision assignments.
 The code is provided solely for educational reference and personal archival purposes.
