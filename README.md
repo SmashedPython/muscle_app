@@ -6,6 +6,7 @@
 ## 📸 Screenshots
 
 ![Low-Fidelity Prototype](images/low_fidelity.jpg)
+
 ![Implementation](images/implement.jpg)
 
 ---
