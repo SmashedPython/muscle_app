@@ -1,6 +1,12 @@
-# 🏋️‍♀️ FitTrack – Smart Fitness Tracker App
+# 🏋️‍♀️ MuscleAPP – Smart Fitness Tracker App
 
-**FitTrack** is a clean, modular, and user-friendly fitness tracking app designed to help users monitor their workouts, track muscle usage, set personal fitness goals, and log meals—while maintaining an intuitive and visually consistent interface.
+**MuscleAPP** is a clean, modular, and user-friendly fitness tracking app designed to help users monitor their workouts, track muscle usage, set personal fitness goals, and log meals—while maintaining an intuitive and visually consistent interface.
+
+---
+## 📸 Screenshots
+
+![Low-Fidelity Prototype](images/low_fidelity.jpg)
+![Implementation](images/implement.jpg)
 
 ---
 
@@ -55,8 +61,12 @@
 
 ---
 
-## 📸 Screenshots
+## 😈Disclaim
 
-![Low-Fidelity Prototype](images/low_fidelity.jpg)
-![Implementation](images/implement.jpg)
+This repository contains my original implementations of computer vision assignments.
+The code is provided solely for educational reference and personal archival purposes.
 
+Please do not copy, reuse, or submit any part of this repository for assignments or projects.
+Doing so may violate your institution’s academic integrity policies.
+
+I am not responsible for any academic misconduct resulting from misuse of this code.
