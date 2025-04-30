@@ -61,4 +61,4 @@ Add images to an `images/` folder and link them like this:
 
 ```markdown
 ### Implementation
-![Muscle APP](images\comparison.jpg)
+![Muscle APP](images/comparison.jpg)
