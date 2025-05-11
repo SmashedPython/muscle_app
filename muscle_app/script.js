@@ -19,8 +19,17 @@ function openCity(cityName, elmnt, color) {
 }
   
 document.addEventListener("DOMContentLoaded", function () {
+
   document.getElementById("defaultOpen").click();
+
+  // globalWorkoutDate default today
+  const today = new Date().toISOString().split("T")[0];
+  const dateInput = document.getElementById("globalWorkoutDate");
+  if (dateInput) {
+    dateInput.value = today;
+  }
 });
+
 
 let currentMeal = 'Breakfast';
 document.querySelectorAll('.meal-tab').forEach(tab => {
@@ -407,31 +416,77 @@ const muscleTrainingStatus = {
   "hams-left": 1,
   "hams-right": 1
 };
+let currentLoggingExercise = null;
+
+const muscleUsage = {
+  pecs: 0,
+  abs: 0,
+  "biceps-left": 0,
+  "biceps-right": 0,
+  "quads-left": 0,
+  "quads-right": 0,
+  traps: 0,
+  lats: 0,
+  "triceps-left": 0,
+  "triceps-right": 0,
+  glute: 0,
+  "hams-left": 0,
+  "hams-right": 0
+};
+
+const exerciseToMuscles = {
+  "Bench Press": ["pecs", "triceps-left", "triceps-right"],
+  "Pull Up": ["lats", "biceps-left", "biceps-right"],
+  "Shoulder Press": ["triceps-left", "triceps-right", "traps"],
+  "Bicep Curl": ["biceps-left", "biceps-right"],
+  "Push Up": ["pecs", "triceps-left", "triceps-right", "abs"],
+  "Deadlift": ["glute", "hams-left", "hams-right", "lats", "traps"],
+  "Squat": ["quads-left", "quads-right", "glute"],
+  "Lunges": ["quads-left", "quads-right", "glute", "hams-left", "hams-right"],
+  "Sit Up": ["abs"],
+  "Crunch": ["abs"],
+  "Plank": ["abs", "quads-left", "quads-right", "triceps-left", "triceps-right"],
+  "Russian Twist": ["abs"],
+  "Leg Raise": ["abs"]
+};
+
+function logExercise(exerciseName) {
+  const muscles = exerciseToMuscles[exerciseName] || [];
+  muscles.forEach(muscle => {
+    if (muscle in muscleUsage) {
+      muscleUsage[muscle]++;
+      updateMuscleColor(muscle);
+    }
+  });
+}
+
+
+function updateMuscleColor(muscleId) {
+  const rect = document.querySelector(`#${muscleId} rect`);
+  if (!rect) return;
+
+  const usage = muscleUsage[muscleId];
+  const level = Math.min(Math.floor(Math.log10(usage + 1)), MAX_SEVERITY);
+
+
+  rect.setAttribute("fill", severityColors[level]);
+}
 
 // Color scale (severity level 0 → 5)
 const severityColors = ["#4caf50", "#aee571", "#fff176", "#ffb74d", "#ff7043", "#f44336"];
 
-
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".muscle").forEach(el => {
     const id = el.id;
-    muscleTrainingStatus[id] = 0; // Start with level 0 (green)
+    muscleTrainingStatus[id] = 0;
 
     const rect = el.querySelector("rect");
     if (rect) {
-      rect.setAttribute("fill", severityColors[0]); // Initial color
+      rect.setAttribute("fill", severityColors[0]);
     }
-
-    el.addEventListener("click", () => {
-      // Increase severity up to max
-      muscleTrainingStatus[id] = Math.min(muscleTrainingStatus[id] + 1, MAX_SEVERITY);
-      const level = muscleTrainingStatus[id];
-      const color = severityColors[level];
-
-      if (rect) rect.setAttribute("fill", color);
-    });
   });
 });
+
 
 
 
@@ -496,6 +551,37 @@ document.addEventListener('DOMContentLoaded', function() {
 document.querySelectorAll('.log-button').forEach(button => {
   button.addEventListener('click', function() {
     const exerciseName = this.closest('.workout-card').querySelector('h3').textContent;
-    alert(`${exerciseName} logged successfully!`);
+    currentLoggingExercise = exerciseName;
+    document.getElementById("exerciseNameTitle").textContent = `Log ${exerciseName}`;
+    document.getElementById("inputWeight").value = "";
+    document.getElementById("inputSets").value = "";
+    document.getElementById("inputReps").value = "";
+    document.getElementById("exerciseInputModal").style.display = "block";
   });
 });
+
+function submitExerciseData() {
+  const weight = parseFloat(document.getElementById("inputWeight").value);
+  const sets = parseInt(document.getElementById("inputSets").value);
+  const reps = parseInt(document.getElementById("inputReps").value);
+
+  if (isNaN(weight) || isNaN(sets) || isNaN(reps)) {
+    alert("Please enter all fields correctly.");
+    return;
+  }
+
+  const totalLoad = weight * sets * reps;
+
+  const muscles = exerciseToMuscles[currentLoggingExercise] || [];
+  muscles.forEach(muscle => {
+    if (muscle in muscleUsage) {
+      muscleUsage[muscle] += totalLoad;
+      updateMuscleColor(muscle);
+    }
+  });
+
+  closeExerciseModal();
+}
+function closeExerciseModal() {
+  document.getElementById("exerciseInputModal").style.display = "none";
+}

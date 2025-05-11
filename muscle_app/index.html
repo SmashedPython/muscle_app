@@ -503,9 +503,14 @@
                 <p>Note your sets & reps!</p>
                 <button class="log-button">Log</button>
               </div>
+              <div class="date-selector-bar">
+                <label for="globalWorkoutDate"><strong>Select Workout Date:</strong></label><br>
+                <input type="date" id="globalWorkoutDate" />
+              </div>
+              
           </section>
       </div>
-  
+      
     
 
     
@@ -539,6 +544,33 @@
 
 
     <script src="script.js"></script>
+</div>
+
+<div id="exerciseInputModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeExerciseModal()">&times;</span>
+    <h3 id="exerciseNameTitle">Log Exercise</h3>
+
+    <div class="form-row">
+      <label for="inputWeight">Weight (kg):</label>
+      <input type="number" id="inputWeight" placeholder="e.g. 50">
+    </div>
+
+    <div class="form-row">
+      <label for="inputSets">Sets:</label>
+      <input type="number" id="inputSets" placeholder="e.g. 3">
+    </div>
+
+    <div class="form-row">
+      <label for="inputReps">Reps per Set:</label>
+      <input type="number" id="inputReps" placeholder="e.g. 10">
+    </div>
+
+    <div class="form-buttons">
+      <button onclick="submitExerciseData()">Log</button>
+      <button onclick="closeExerciseModal()">Cancel</button>
+    </div>
+  </div>
 </div>
 </body>
 </html>

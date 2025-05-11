@@ -945,3 +945,26 @@ html, body {
 .section-cards .workout-card.visible {
   display: block;
 }
+
+.date-selector-bar {
+  padding: 10px 20px;
+  background-color: #eaf6ff;
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid #ccc;
+}
+
+.date-selector-bar label {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+#globalWorkoutDate {
+  padding: 6px;
+  font-size: 1rem;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+}
+
