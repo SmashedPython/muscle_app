@@ -487,39 +487,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
-
-
-// Exercise selection functionality
-document.querySelectorAll('.workouts').forEach(icon => {
-  icon.addEventListener('click', function() {
-      // First, deselect all icons and hide all cards
-      document.querySelectorAll('.workouts').forEach(i => {
-          i.classList.remove('selected');
-      });
-      document.querySelectorAll('.workout-card').forEach(card => {
-          card.style.display = 'none';
-      });
-     
-      // Then select this icon and show its card
-      this.classList.add('selected');
-      const exercise = this.getAttribute('data-workout');
-      const card = document.getElementById(`${exercise}-card`);
-      if (card) {
-          card.style.display = 'block';
-      }
-  });
-});
-
-
-// Initialize by hiding all workout cards
 document.addEventListener('DOMContentLoaded', function() {
-  // Hide all workout cards initially
-  document.querySelectorAll('.workout-card').forEach(card => {
-    card.style.display = 'none';
-  });
-
-
   // Exercise selection functionality
   document.querySelectorAll('.workouts').forEach(icon => {
     icon.addEventListener('click', function() {
@@ -531,28 +499,33 @@ document.addEventListener('DOMContentLoaded', function() {
         i.classList.remove('selected');
       });
      
-      // Hide all workout cards in this section
-      document.querySelectorAll(`#${section}-cards .workout-card`).forEach(card => {
-        card.style.display = 'none';
-      });
-     
-      // Then select this workout and show its card
+      // Then select this workout
       this.classList.add('selected');
-      const card = document.getElementById(`${exercise}-card`);
-      if (card) {
-        card.style.display = 'block';
-      }
     });
   });
 });
 
+document.querySelectorAll('#workoutTabs .meal-tab').forEach(tab => {
+  tab.addEventListener('click', function() {
+    document.querySelectorAll('#workoutTabs .meal-tab').forEach(t => t.classList.remove('active'));
+    this.classList.add('active');
 
-// Log button functionality - Placed outside DOMContentLoaded to ensure it runs even if DOM is already loaded
-document.querySelectorAll('.log-button').forEach(button => {
-  button.addEventListener('click', function() {
-    const exerciseName = this.closest('.workout-card').querySelector('h3').textContent;
-    currentLoggingExercise = exerciseName;
-    document.getElementById("exerciseNameTitle").textContent = `Log ${exerciseName}`;
+    if (this.dataset.tab === "log") {
+      document.getElementById("logTabContent").style.display = "block";
+      document.getElementById("historyTabContent").style.display = "none";
+    } else {
+      document.getElementById("logTabContent").style.display = "none";
+      document.getElementById("historyTabContent").style.display = "block";
+    }
+  });
+});
+
+document.querySelectorAll('.workouts').forEach(icon => {
+  
+  icon.addEventListener('click', function() {
+    const exercise = this.getAttribute('data-workout');
+    currentLoggingExercise = exercise;
+    document.getElementById("exerciseNameTitle").textContent = `Log ${exercise}`;
     document.getElementById("inputWeight").value = "";
     document.getElementById("inputSets").value = "";
     document.getElementById("inputReps").value = "";
@@ -580,8 +553,29 @@ function submitExerciseData() {
     }
   });
 
+  const date = document.getElementById("globalWorkoutDate").value;
+  addWorkoutToHistory(date, currentLoggingExercise, weight, sets, reps);
+
   closeExerciseModal();
 }
 function closeExerciseModal() {
   document.getElementById("exerciseInputModal").style.display = "none";
+}
+
+function addWorkoutToHistory(date, workout, weight, sets, reps) {
+  if (!workoutLogHistory[date]) workoutLogHistory[date] = [];
+  workoutLogHistory[date].push({ workout, weight, sets, reps });
+
+  const tableBody = document.querySelector("#workoutHistoryTable tbody");
+  const newRow = document.createElement("tr");
+
+  newRow.innerHTML = `
+    <td style="border: 1px solid #000; padding: 8px;">${date}</td>
+    <td style="border: 1px solid #000; padding: 8px;">${workout}</td>
+    <td style="border: 1px solid #000; padding: 8px;">${weight}</td>
+    <td style="border: 1px solid #000; padding: 8px;">${sets}</td>
+    <td style="border: 1px solid #000; padding: 8px;">${reps}</td>
+  `;
+
+  tableBody.appendChild(newRow);
 }
