@@ -304,23 +304,6 @@
                 <button onclick="cancelGoalEdit()">Cancel</button>
                 </div>
             </div>
-  
-        <div id="calendarSection">
-            <button onclick="showStreakPage()">See Past Data</button>
-        </div>
-        
-        <div id="streakPage" style="display: none;" class="streak-calendar">
-            <h2>Weekly Streak</h2>
-            <div class="calendar-nav">
-            <button onclick="prevWeek()">⬅️</button>
-            <span id="weekLabel"></span>
-            <button onclick="nextWeek()">➡️</button>
-            </div>
-            <div id="weekCalendar" class="week-calendar"></div>
-            <div style="margin-top: 20px;">
-            <button onclick="hideStreakPage()">Back</button>
-            </div>
-        </div>
         </div>
     
         <div id="dayModal" class="modal">
@@ -371,6 +354,20 @@
 
   
       </div>
+
+      <div id="Calendar" class="tabcontent">
+          <div class="calendar-page">
+            <h2>Weekly Streak</h2>
+            <div class="calendar-nav">
+              <button onclick="prevWeek()">⬅️</button>
+              <span id="weekLabel"></span>
+              <button onclick="nextWeek()">➡️</button>
+            </div>
+            <div id="weekCalendar" class="week-calendar"></div>
+          </div>
+        </div>
+
+
 
       
 
@@ -456,6 +453,10 @@
 
         <button class="tablink" onclick="openCity('Food', this, 'green')">
             <span class="emoji">🍎</span><br>
+        </button>
+
+        <button class="tablink" onclick="openCity('Calendar', this, 'orange')">
+            <span class="emoji">📅</span><br>
         </button>
         
           <button id="workoutTabBtn" class="tablink" onclick="openCity('Workout', this, 'blue')">
